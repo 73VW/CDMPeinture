@@ -3,6 +3,7 @@
 
 ### Composer ###
 composer.phar
+composer.lock
 /vendor/
 
 # Commit your application's lock file http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file
@@ -19,6 +20,7 @@ bootstrap/compiled.php
 app/storage/
 
 # Laravel 5 & Lumen specific
+.env
 public/storage
 public/hot
 storage/*.key
@@ -27,5 +29,12 @@ Homestead.json
 
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
+
+### npm ###
+package-lock.json
+
+
+### yarn ###
+yarn.lock
 
 # End of https://www.gitignore.io/api/laravel,composer
