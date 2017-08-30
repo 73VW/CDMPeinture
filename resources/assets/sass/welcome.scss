@@ -1,0 +1,29 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+$header-height: 10vh;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+.navbar-brand{
+    color: red;
+}
+
+section{
+    height: 100vh;
+}
+
+nav{
+    height: $header-height;
+    background-color: white;
+}
+
+.masthead{
+    background-color: black;
+    margin-top: -$header-height;
+    padding-top: $header-height;
+    padding-bottom: -$header-height;
+    background-image: url("/img/potpeinture.jpg");
+}
