@@ -1,6 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/css/welcome.css": "/css/welcome.css",
-    "/js/agency.js": "/js/agency.js"
+    "/css/agency.css": "/css/agency.css",
+    "/css/sb-admin.css": "/css/sb-admin.css",
+    "/js/agency.js": "/js/agency.js",
+    "/js/sbadmin.js": "/js/sbadmin.js",
+    "/css/dataTables.bootstrap4.css": "/css/dataTables.bootstrap4.css"
 }

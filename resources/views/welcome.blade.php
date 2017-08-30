@@ -19,6 +19,7 @@ $contact = "Contact";
     <title>CDM - Peinture</title>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/agency.css') }}">
 
     <!-- Custom fonts for this template -->
     <link href="{{ asset('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">

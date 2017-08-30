@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/administration', function() {
-    return view( 'administration');
-});
+Auth::routes('/administration');
+
+Route::get('/administration', 'HomeController@index')->name('administration');
+Route::get('/administration/charts', 'ChartController@index')->name('Charts');
