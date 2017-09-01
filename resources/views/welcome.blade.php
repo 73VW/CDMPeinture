@@ -69,7 +69,7 @@ $contact = "Contact";
         <div class="container">
             <div class="intro-text">
                 <div class="intro-lead-in">Bienvenue sur notre site internet!</div>
-                <div class="intro-heading">Nous sommes ravi de vous intéresser</div>
+                <div class="intro-heading">Nous sommes ravis de vous intéresser</div>
                 <a class="btn btn-xl js-scroll-trigger" href="#services">En savoir plus</a>
             </div>
         </div>
