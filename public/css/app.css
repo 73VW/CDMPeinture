@@ -9186,3 +9186,31 @@ a.text-dark:hover {
   visibility: hidden !important;
 }
 
+.pagination li,
+.pagination li a {
+  display: block;
+  width: 2vw;
+  border-right: 1px solid black;
+  text-align: center;
+  transition: background 0.5s ease;
+  -webkit-transition: background 0.5s ease;
+}
+
+.pagination a {
+  background-color: #f5f8fa;
+}
+
+.pagination li:last-child,
+.pagination li:last-child a {
+  border: none;
+}
+
+.pagination a:hover {
+  text-decoration: none;
+  background-color: #d3e0e9;
+}
+
+.pagination .active {
+  background-color: #b1c8d8;
+}
+

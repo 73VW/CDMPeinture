@@ -42,7 +42,7 @@
                     </tbody>
                 </table>
             </div>
-            {!! link_to_route('contact.create', 'Ajouter un utilisateur', [], ['class' => 'btn btn-info pull-right']) !!}
+            {!! link_to_route('contact.create', 'Ajouter un contact', [], ['class' => 'btn btn-info pull-right']) !!}
             {!! $contacts->links() !!}
         </div>
     </div>
