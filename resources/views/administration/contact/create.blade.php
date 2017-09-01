@@ -11,7 +11,7 @@
                     Ajout d'un nouveau client
                 </div>
                 <div class="card-body">
-                    {{ Form::open(['route' => 'store.contact', 'class' => 'form-horizontal']) }}
+                    {{ Form::open(['route' => 'contact.store', 'class' => 'form-horizontal']) }}
                     {{ csrf_field() }}
                     <div class="form-group row{{ $errors->has('prenom') ? ' has-error' : '' }}">
                         {{ Form::label('prenom', 'Prénom', array('class' => 'col-sm-2 text-muted')) }}
@@ -54,8 +54,10 @@
                         {{ $errors->first('email', '<small class="help-block">:message</small>') }}
                     </div>
                     <div class="form-group row{{ $errors->has('client') ? ' has-error' : '' }}">
-                        {{ Form::label('client', 'Client', array('class' => 'col-sm-2 text-muted')) }}
-                        {{ Form::checkbox('client', true, true, array('class' => 'form-control col-sm-8', 'required' => 'required')) }}
+                        {{ Form::label('client1', 'Client', array('class' => 'col-sm-2 text-muted')) }}
+                        {{ Form::radio('client', 1, true, array('id' => 'client1', 'class' => 'form-control col-sm-1')) }}<br/>
+                        {{ Form::label('client2', 'Fournisseur', array('class' => 'col-sm-2 text-muted')) }}
+                        {{ Form::radio('client', 0, false, array('id' => 'client2', 'class' => 'form-control col-sm-1')) }}
                         {{ $errors->first('client', '<small class="help-block">:message</small>') }}
                     </div>
                     {{ Form::submit('Envoyer !', ['class' => 'btn btn-primary btn-block col-sm-3']) }}
