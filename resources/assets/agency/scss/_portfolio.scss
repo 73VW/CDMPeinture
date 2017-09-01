@@ -1,5 +1,5 @@
 // Styling for the portfolio section
-#portfolio {
+#portfolio, #services {
   .portfolio-item {
     right: 0;
     margin: 0 0 15px;
@@ -73,9 +73,10 @@
 
 .portfolio-modal {
   .modal-dialog {
-    max-width: none;
+    max-width: 65vw;
     height: 100%;
     margin: 0;
+    margin-left:17.5vw;
   }
   .modal-content {
     min-height: 100%;

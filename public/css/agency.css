@@ -8,14 +8,14 @@ p {
 }
 
 a {
-  color: #FF0021;
+  color: #cc0033;
 }
 
 a.active,
 a:active,
 a:focus,
 a:hover {
-  color: #cc001a;
+  color: #990026;
 }
 
 h1,
@@ -38,7 +38,7 @@ section h2.section-heading {
   font-size: 40px;
   margin-top: 0;
   margin-bottom: 15px;
-  color: #19B5FE;
+  color: #333367;
 }
 
 section h3.section-subheading {
@@ -58,12 +58,12 @@ section h3.section-subheading {
 }
 
 ::-moz-selection {
-  background: #FF0021;
+  background: #cc0033;
   text-shadow: none;
 }
 
 ::selection {
-  background: #FF0021;
+  background: #cc0033;
   text-shadow: none;
 }
 
@@ -80,11 +80,12 @@ img::-moz-selection {
 }
 
 body {
-  -webkit-tap-highlight-color: #FF0021;
+  -webkit-tap-highlight-color: #cc0033;
 }
 
 #mainNav {
-  background-color: #222222;
+  background-color: white;
+  font-weight: bold;
 }
 
 #mainNav .navbar-toggler {
@@ -94,13 +95,13 @@ body {
   text-transform: uppercase;
   color: white;
   border: 0;
-  background-color: #FF0021;
+  background-color: #cc0033;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
 }
 
 #mainNav .navbar-brand {
-  color: #FF0021;
+  color: #cc0033;
   font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
 }
 
@@ -108,22 +109,22 @@ body {
 #mainNav .navbar-brand:active,
 #mainNav .navbar-brand:focus,
 #mainNav .navbar-brand:hover {
-  color: #cc001a;
+  color: #990026;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
-  font-size: 90%;
-  font-weight: 400;
+  font-size: 100%;
+  font-weight: bold;
   padding: 0.75em 0;
   letter-spacing: 1px;
-  color: #19B5FE;
+  color: #333367;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link.active,
 #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #FF0021;
+  color: #cc0033;
 }
 
 @media (min-width: 992px) {
@@ -133,7 +134,7 @@ body {
     -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
     transition: padding-top 0.3s, padding-bottom 0.3s;
     border: none;
-    background-color: transparent;
+    background-color: white;
   }
 
   #mainNav .navbar-brand {
@@ -149,7 +150,7 @@ body {
   #mainNav.navbar-shrink {
     padding-top: 0;
     padding-bottom: 0;
-    background-color: #222222;
+    background-color: white;
   }
 
   #mainNav.navbar-shrink .navbar-brand {
@@ -218,15 +219,17 @@ header.masthead .intro-text .intro-heading {
 .service-heading {
   margin: 15px 0;
   text-transform: none;
-  color: #19B5FE;
+  color: #333367;
 }
 
-#portfolio .portfolio-item {
+#portfolio .portfolio-item,
+#services .portfolio-item {
   right: 0;
   margin: 0 0 15px;
 }
 
-#portfolio .portfolio-item .portfolio-link {
+#portfolio .portfolio-item .portfolio-link,
+#services .portfolio-item .portfolio-link {
   position: relative;
   display: block;
   max-width: 400px;
@@ -234,21 +237,24 @@ header.masthead .intro-text .intro-heading {
   cursor: pointer;
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover {
+#portfolio .portfolio-item .portfolio-link .portfolio-hover,
+#services .portfolio-item .portfolio-link .portfolio-hover {
   position: absolute;
   width: 100%;
   height: 100%;
   -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
   opacity: 0;
-  background: rgba(255, 0, 33, 0.9);
+  background: rgba(204, 0, 51, 0.9);
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
+#portfolio .portfolio-item .portfolio-link .portfolio-hover:hover,
+#services .portfolio-item .portfolio-link .portfolio-hover:hover {
   opacity: 1;
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content,
+#services .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
   font-size: 20px;
   position: absolute;
   top: 50%;
@@ -259,16 +265,20 @@ header.masthead .intro-text .intro-heading {
   color: white;
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i,
+#services .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
   margin-top: -12px;
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4,
+#services .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
+#services .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
   margin: 0;
 }
 
-#portfolio .portfolio-item .portfolio-caption {
+#portfolio .portfolio-item .portfolio-caption,
+#services .portfolio-item .portfolio-caption {
   max-width: 400px;
   margin: 0 auto;
   padding: 25px;
@@ -276,20 +286,23 @@ header.masthead .intro-text .intro-heading {
   background-color: white;
 }
 
-#portfolio .portfolio-item .portfolio-caption h4 {
+#portfolio .portfolio-item .portfolio-caption h4,
+#services .portfolio-item .portfolio-caption h4 {
   margin: 0;
   text-transform: none;
-  color: #19B5FE;
+  color: #333367;
 }
 
-#portfolio .portfolio-item .portfolio-caption p {
+#portfolio .portfolio-item .portfolio-caption p,
+#services .portfolio-item .portfolio-caption p {
   font-size: 16px;
   font-style: italic;
   margin: 0;
   font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-#portfolio * {
+#portfolio *,
+#services * {
   z-index: 2;
 }
 
@@ -300,9 +313,10 @@ header.masthead .intro-text .intro-heading {
 }
 
 .portfolio-modal .modal-dialog {
-  max-width: none;
+  max-width: 65vw;
   height: 100%;
   margin: 0;
+  margin-left: 17.5vw;
 }
 
 .portfolio-modal .modal-content {
@@ -451,9 +465,9 @@ header.masthead .intro-text .intro-heading {
   margin-left: 0;
   text-align: center;
   color: white;
-  border: 7px solid #ffabb6;
+  border: 7px solid #ff789a;
   border-radius: 100%;
-  background-color: #19B5FE;
+  background-color: #333367;
 }
 
 .timeline > li .timeline-image h4 {
@@ -488,7 +502,7 @@ header.masthead .intro-text .intro-heading {
 
 .timeline .timeline-heading h4 {
   margin-top: 0;
-  color: #19B5FE;
+  color: #333367;
 }
 
 .timeline .timeline-heading h4.subheading {
@@ -603,7 +617,7 @@ header.masthead .intro-text .intro-heading {
   margin-top: 25px;
   margin-bottom: 0;
   text-transform: none;
-  color: #19B5FE;
+  color: #333367;
 }
 
 .team-member p {
@@ -640,7 +654,7 @@ section#contact .form-group textarea.form-control {
 }
 
 section#contact .form-control:focus {
-  border-color: #FF0021;
+  border-color: #cc0033;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -722,18 +736,18 @@ ul.social-buttons li a {
 ul.social-buttons li a:active,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:hover {
-  background-color: #FF0021;
+  background-color: #cc0033;
 }
 
 .text-primary {
-  color: #FF0021 !important;
+  color: #cc0033 !important;
 }
 
 .btn-primary {
   font-weight: 700;
   color: white;
-  border-color: #FF0021;
-  background-color: #FF0021;
+  border-color: #cc0033;
+  background-color: #cc0033;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
 }
@@ -741,22 +755,22 @@ ul.social-buttons li a:hover {
 .btn-primary.focus,
 .btn-primary:focus {
   color: white;
-  border-color: #800011;
-  background-color: #cc001a;
+  border-color: #4d0013;
+  background-color: #990026;
 }
 
 .btn-primary:hover {
   color: white;
-  border-color: #c20019;
-  background-color: #cc001a;
+  border-color: #8f0024;
+  background-color: #990026;
 }
 
 .btn-primary.active,
 .btn-primary:active,
 .open > .btn-primary.dropdown-toggle {
   color: white;
-  border-color: #c20019;
-  background-color: #cc001a;
+  border-color: #8f0024;
+  background-color: #990026;
 }
 
 .btn-primary.active.focus,
@@ -769,8 +783,8 @@ ul.social-buttons li a:hover {
 .open > .btn-primary.dropdown-toggle:focus,
 .open > .btn-primary.dropdown-toggle:hover {
   color: white;
-  border-color: #800011;
-  background-color: #a80016;
+  border-color: #4d0013;
+  background-color: #75001d;
 }
 
 .btn-primary.active,
@@ -788,12 +802,12 @@ ul.social-buttons li a:hover {
 fieldset[disabled] .btn-primary.focus,
 fieldset[disabled] .btn-primary:focus,
 fieldset[disabled] .btn-primary:hover {
-  border-color: #FF0021;
-  background-color: #FF0021;
+  border-color: #cc0033;
+  background-color: #cc0033;
 }
 
 .btn-primary .badge {
-  color: #FF0021;
+  color: #cc0033;
   background-color: white;
 }
 
@@ -803,8 +817,8 @@ fieldset[disabled] .btn-primary:hover {
   padding: 20px 40px;
   border-radius: 3px;
   color: white;
-  border-color: #FF0021;
-  background-color: #FF0021;
+  border-color: #cc0033;
+  background-color: #cc0033;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
 }
@@ -812,22 +826,22 @@ fieldset[disabled] .btn-primary:hover {
 .btn-xl.focus,
 .btn-xl:focus {
   color: white;
-  border-color: #800011;
-  background-color: #cc001a;
+  border-color: #4d0013;
+  background-color: #990026;
 }
 
 .btn-xl:hover {
   color: white;
-  border-color: #c20019;
-  background-color: #cc001a;
+  border-color: #8f0024;
+  background-color: #990026;
 }
 
 .btn-xl.active,
 .btn-xl:active,
 .open > .btn-xl.dropdown-toggle {
   color: white;
-  border-color: #c20019;
-  background-color: #cc001a;
+  border-color: #8f0024;
+  background-color: #990026;
 }
 
 .btn-xl.active.focus,
@@ -840,8 +854,8 @@ fieldset[disabled] .btn-primary:hover {
 .open > .btn-xl.dropdown-toggle:focus,
 .open > .btn-xl.dropdown-toggle:hover {
   color: white;
-  border-color: #800011;
-  background-color: #a80016;
+  border-color: #4d0013;
+  background-color: #75001d;
 }
 
 .btn-xl.active,
@@ -859,12 +873,12 @@ fieldset[disabled] .btn-primary:hover {
 fieldset[disabled] .btn-xl.focus,
 fieldset[disabled] .btn-xl:focus,
 fieldset[disabled] .btn-xl:hover {
-  border-color: #FF0021;
-  background-color: #FF0021;
+  border-color: #cc0033;
+  background-color: #cc0033;
 }
 
 .btn-xl .badge {
-  color: #FF0021;
+  color: #cc0033;
   background-color: white;
 }
 

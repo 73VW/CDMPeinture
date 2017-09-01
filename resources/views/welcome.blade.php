@@ -37,7 +37,7 @@ $contact = "Contact";
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top"><?=$brand?></a>
+            <a class="navbar-brand js-scroll-trigger" href="#page-top"><img style="max-height: 8vh;" src="/images/Logo_definitif.gif" /></a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fa fa-bars"></i>
@@ -76,7 +76,7 @@ $contact = "Contact";
     </header>
 
     <!-- Services -->
-    <section id="services">
+    <section  class="bg-light" id="services">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -84,10 +84,11 @@ $contact = "Contact";
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
             </div>
-            <div class="row text-center">
-                @include('prestation', ['title' => 'Platrerie et Peinture', 'icon' => 'fa-paint-brush'])
-                @include('prestation', ['title' => 'Decoration (Béton ciré)', 'icon' => 'fa-cube'])
-                @include('prestation', ['title' => 'Traitement de façade', 'icon' => 'fa-building'])
+            <div class="row">
+                @include('realisation', ['title' => 'Peinture', 'subtitle' => '', 'img_path' => 'img/portfolio/01-thumbnail.jpg'])
+                @include('realisation', ['title' => 'Plâtrerie', 'subtitle' => '', 'img_path' => 'img/portfolio/02-thumbnail.jpg'])
+                @include('realisation', ['title' => 'Décoration', 'subtitle' => '', 'img_path' => 'img/portfolio/03-thumbnail.jpg'])
+                @include('realisation', ['title' => 'Façades', 'subtitle' => '', 'img_path' => 'img/portfolio/04-thumbnail.jpg'])
             </div>
         </div>
     </section>
@@ -394,8 +395,15 @@ $contact = "Contact";
                         <div class="col-lg-8 mx-auto">
                             <div class="modal-body">
                                 <!-- Project Details Go Here -->
-                                <h2>Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <h2>Peinture</h2>
+                                <p class="item-intro text-muted">C'est ici que vous trouverez les informations sur nos spécialités concernant la peinture.</p>
+                                <h3>Peinture à l'eau</h3>
+                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+                                <h3>Peinture anti graffitis</h3>
+                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                <h3>Peinture</h3>
+                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                                 <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                                 <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
@@ -407,7 +415,7 @@ $contact = "Contact";
                                 </ul>
                                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                                     <i class="fa fa-times"></i>
-                                    Close Project</button>
+                                    Fermer le projet</button>
                                 </div>
                             </div>
                         </div>
