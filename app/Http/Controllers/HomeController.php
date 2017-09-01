@@ -11,9 +11,15 @@ class HomeController extends Controller
     *
     * @return void
     */
+
+    private $repository;
+
+    private $nav;
     public function __construct()
     {
+        $this->repository = 'administration';
         $this->middleware('auth');
+        $this->nav = view($this->repository.'.navbar');
     }
 
     /**
@@ -23,6 +29,21 @@ class HomeController extends Controller
     */
     public function index()
     {
-        return view('home');
+        return $this->nav.view($this->repository.'.home');
+    }
+
+    public function charts()
+    {
+        return $this->nav.view($this->repository.'.charts');
+    }
+
+    public function tables()
+    {
+        return $this->nav.view($this->repository.'.table');
+    }
+
+    public function components()
+    {
+        return $this->nav.view($this->repository.'.components');
     }
 }

@@ -1,7 +1,37 @@
+.login{
+    @at-root body{
+        background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../../agency/img/head.jpeg');
+        background-size:cover
+    }
+}
+
+.card{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+
+    .card-header{
+        border: none;
+        font-size: 2em;
+        color: $red;
+    }
+
+    .card-body{
+        border: none;
+    }
+
+    .d-block{
+        margin-top: 1vh;
+        font-size: 1.2em;
+        color: $red;
+    }
+}
+
 .card-login {
-  max-width: 25rem;
+    max-width: 25rem;
 }
 
 .card-register {
-  max-width: 40rem;
+    max-width: 40rem;
 }

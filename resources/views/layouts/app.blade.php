@@ -19,16 +19,15 @@
 </head>
 <body>
     <div id="app">
+        @yield('navbar')
+        @yield('content')
+    </div>
 
-@yield('content')
-</div>
+    <!-- Scripts -->
 
-<!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
 
-<!-- Bootstrap core JavaScript -->
-
-<script src="{{ asset('js/app.js') }}"></script>
-<script src="{{ asset('js/sbadmin.js') }}"></script>
-</script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/sbadmin.js') }}"></script>
 </body>
 </html>

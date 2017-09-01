@@ -15,7 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes('/administration');
+Auth::routes();
 
-Route::get('/administration', 'HomeController@index')->name('administration');
-Route::get('/administration/charts', 'ChartController@index')->name('Charts');
+Route::group(['prefix' => '/administration'], function() {
+
+    Route::get('/', 'HomeController@index')->name('administration');
+    Route::get('/charts', 'HomeController@charts')->name('Charts');
+    Route::get('/tables', 'HomeController@tables')->name('tables');
+    Route::get('/components', 'HomeController@components')->name('components');
+    Route::group(['prefix' => '/devis'], function(){
+        Route::get('/', 'DevisController@index')->name('devis');
+        Route::get('/list', 'DevisController@list')->name('liste');
+        Route::get('/new', 'DevisController@new')->name('new');
+    });
+    Route::get('/links', 'HomeController@links')->name('links');
+
+});

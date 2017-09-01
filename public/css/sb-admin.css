@@ -20,6 +20,10 @@ body.fixed-nav {
   padding-top: 1rem;
 }
 
+.container-fluid {
+  margin-top: 7vh;
+}
+
 .scroll-to-top {
   position: fixed;
   right: 15px;
@@ -487,6 +491,35 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(/images/head.jpeg?2bfe1b6d78452995ad012a1e417c1d3e);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/head.jpeg?2bfe1b6d78452995ad012a1e417c1d3e);
+  background-size: cover;
+}
+
+.card {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.card .card-header {
+  border: none;
+  font-size: 2em;
+  color: #FF0021;
+}
+
+.card .card-body {
+  border: none;
+}
+
+.card .d-block {
+  margin-top: 1vh;
+  font-size: 1.2em;
+  color: #FF0021;
 }
 
 .card-login {

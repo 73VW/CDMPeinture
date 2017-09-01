@@ -6,12 +6,12 @@
  */
 
 
-window.$ = window.jQuery = window.jquery = require('jquery');
+
+window.$ = window.jQuery = require('jquery');
 window.Popper = require('popper.js').default;
 window.bootstrap = require('./bootstrap');
 
 window.jquery.easing = require('jquery.easing');
-window.jqueryui = require('jquery-ui');
 
 window.Util = require('bootstrap/js/dist/util');
 window.Dropdown = require('bootstrap/js/dist/dropdown');
