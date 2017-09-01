@@ -20,13 +20,14 @@ Auth::routes();
 Route::group(['prefix' => '/administration'], function() {
 
     Route::get('/', 'HomeController@index')->name('administration');
-    Route::get('/charts', 'HomeController@charts')->name('Charts');
-    Route::get('/tables', 'HomeController@tables')->name('tables');
-    Route::get('/components', 'HomeController@components')->name('components');
+    Route::get('/charts', 'HomeController@charts');
+    Route::get('/tables', 'HomeController@tables');
+    Route::get('/contact', 'ContactController@create')->name('create.contact');
+    Route::post('/contact', 'ContactController@store')->name('store.contact');
     Route::group(['prefix' => '/devis'], function(){
-        Route::get('/', 'DevisController@index')->name('devis');
-        Route::get('/list', 'DevisController@list')->name('liste');
-        Route::get('/new', 'DevisController@new')->name('new');
+        Route::get('/', 'DevisController@index');
+        Route::get('/list', 'DevisController@list');
+        Route::get('/new', 'DevisController@new');
     });
     Route::get('/links', 'HomeController@links')->name('links');
 

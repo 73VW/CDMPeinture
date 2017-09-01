@@ -11,7 +11,7 @@
             @include('administration.navlink', ['href' => '/administration/', 'name' => 'Tableau de bord'])
             @include('administration.navlink', ['href' => '/administration/charts', 'name' => 'Graphiques'])
             @include('administration.navlink', ['href' => '/administration/tables', 'name' => 'Tableaux'])
-            @include('administration.navlink', ['href' => '/administration/components', 'name' => 'Composants'])
+            @include('administration.navlink', ['href' => '/administration/contact', 'name' => 'Contacts'])
             @include('administration.multilevelnavlink', ['href' => '/administration/devis', 'name' => 'Devis', 'links' => [['name' =>'Nouveau', 'href' => 'new'], ['name' =>'Liste', 'href' => 'list']]])
             @include('administration.navlink', ['href' => '/register', 'name' => 'Nouvel employé'])
         </ul>
@@ -129,5 +129,30 @@
                         </ul>
                     </div>
                 </nav>
-
+                <!-- Logout Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Select "Logout" below if you are ready to end your current session.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <a class="btn btn-primary" href="{{ url('/logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                Logout</a>
+                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 @endsection
