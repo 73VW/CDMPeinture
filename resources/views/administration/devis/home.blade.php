@@ -21,7 +21,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                    {{ Form::open(['route' => 'store.contact', 'class' => 'form-horizontal']) }}
+                    {{ Form::open(['route' => 'contact.store', 'class' => 'form-horizontal']) }}
                     {{ csrf_field() }}
                     <div class="form-group row{{ $errors->has('devisNum') ? ' has-error' : '' }}">
                         {{ Form::label('devisNum', 'N° du devis', array('class' => 'col-sm-2 text-muted')) }}
@@ -94,5 +94,5 @@
     </a>
 
     <script src="{{ asset('js/devis.js') }}"></script>
-    
+
     @endsection

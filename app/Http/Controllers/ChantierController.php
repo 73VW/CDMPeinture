@@ -3,23 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\ProduitRequest;
-use App\Repositories\ProduitRepository;
-use App\Produit;
+use App\Http\Requests\ChantierRequest;
+use App\Repositories\ChantierRepository;
+use App\Chantier;
 
-class ProduitController extends Controller
+class ChantierController extends Controller
 {
-    protected $produitRepository;
+    protected $chantierRepository;
     protected $nbrPerPage = 10;
     protected $repository;
     protected $nav;
 
-    public function __construct(ProduitRepository $produitRepository)
+    public function __construct(ChantierRepository $chantierRepository)
     {
-        $this->produitRepository = $produitRepository;
+        $this->chantierRepository = $chantierRepository;
 
         $this->middleware('auth');
-        $this->repository = 'administration/produit';
+        $this->repository = 'administration/chantier';
     }
 
 
@@ -30,9 +30,9 @@ class ProduitController extends Controller
     */
     public function index(Request $request)
     {
-        $produits = $this->produitRepository->getPaginate($this->nbrPerPage);
+        $chantiers = $this->chantierRepository->getPaginate($this->nbrPerPage);
 
-        return view($this->repository.'.index', compact('produits'));
+        return view($this->repository.'.index', compact('chantiers'));
     }
     /**
     * Show the form for creating a new resource.
@@ -51,11 +51,11 @@ class ProduitController extends Controller
     * @return \Illuminate\Http\Response
     */
 
-    public function store(ProduitRequest $request)
+    public function store(ChantierRequest $request)
     {
-        $produit = $this->produitRepository->store($request->all());
+        $chantier = $this->chantierRepository->store($request->all());
 
-        return redirect()->route('produit.index')->withOk("Le produit " . $produit->name . " a été créé.");
+        return redirect()->route('chantier.index')->withOk("L'utilisateur " . $chantier->name . " a été créé.");
     }
 
     /**
@@ -64,9 +64,9 @@ class ProduitController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function show(Produit $produit)
+    public function show(Chantier $chantier)
     {
-        return view($this->repository.'.show', compact('contact'));
+        return view($this->repository.'.show', compact('chantier'));
     }
 
     /**
@@ -75,9 +75,9 @@ class ProduitController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function edit(Produit $produit)
+    public function edit(Chantier $chantier)
     {
-        return view($this->repository.'.edit', compact('contact'));
+        return view($this->repository.'.edit', compact('chantier'));
     }
 
     /**
@@ -87,11 +87,11 @@ class ProduitController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function update(Request $request, Produit $produit)
+    public function update(ChantierRequest $request, Chantier $chantier)
     {
-        $this->produitRepository->update($produit, $request->all());
+        $this->chantierRepository->update($chantier, $request->all());
 
-        return redirect()->route('produit.index')->withOk("Le produit " . $produit->name . " a été modifié.");
+        return redirect()->route('chantier.index')->withOk("L'utilisateur " . $request->name . " a été modifié.");
     }
 
     /**
@@ -100,9 +100,9 @@ class ProduitController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function destroy(ProduitRequest $produit)
+    public function destroy(Chantier $chantier)
     {
-        $this->produitRepository->destroy($produit);
+        $this->chantierRepository->destroy($chantier);
 
         return back();
     }

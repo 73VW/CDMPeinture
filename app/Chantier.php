@@ -3,8 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
-class Produit extends Model
+use App\Contact;
+class Chantier extends Model
 {
 
     /**
@@ -13,7 +13,7 @@ class Produit extends Model
      * @var array
      */
     protected $fillable = [
-        'nom', 'contact_id', 'prixUnitaire', 'stock', 'unite', 'produit'
+        'rue', 'numero', 'codePostal', 'ville', 'description', 'contact_id'
     ];
 
     public function contact()

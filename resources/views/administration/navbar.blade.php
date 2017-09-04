@@ -7,7 +7,7 @@
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             @include('administration.navlink', ['href' => '/administration/', 'name' => 'Tableau de bord'])
             @include('administration.navlink', ['href' => '/administration/produit', 'name' => 'Produits'])
-            @include('administration.navlink', ['href' => '/administration/tables', 'name' => 'Tableaux'])
+            @include('administration.navlink', ['href' => '/administration/chantier', 'name' => 'Chantiers'])
             @include('administration.navlink', ['href' => '/administration/contact', 'name' => 'Contacts'])
             @include('administration.multilevelnavlink', ['href' => '/administration/devis', 'name' => 'Devis', 'links' => [['name' =>'Nouveau', 'href' => 'new'], ['name' =>'Liste', 'href' => 'list']]])
             @include('administration.navlink', ['href' => '/register', 'name' => 'Nouvel employé'])
@@ -43,7 +43,7 @@
                         <span class="number">6</span>
                     </span>
                 </a>
-                
+
             </li>
             <li class="nav-item">
                 <form class="form-inline my-2 my-lg-0 mr-lg-2">
