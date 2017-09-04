@@ -1,4 +1,4 @@
-@extends('layouts.app')
+ a@extends('layouts.app')
 
 @section('content')
 
@@ -11,10 +11,10 @@
       <li class="breadcrumb-item">
         <a href="#">Dashboard</a>
       </li>
-      <li class="breadcrumb-item active">My Dashboard</li>
+      <li class="breadcrumb-item active">Devis</li>
     </ol>
 
-    <h1>Blank Page</h1>
+    <h1>Devis</h1>
 
   </div>
   <!-- /.container-fluid -->
