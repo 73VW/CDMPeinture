@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ContactRequest extends FormRequest
+class ContactCreateRequest extends FormRequest
 {
     /**
     * Determine if the user is authorized to make this request.
@@ -32,7 +32,7 @@ class ContactRequest extends FormRequest
             'ville' => 'bail|required|string',
             'numeroTel' => 'bail|required|string',
             'email' => 'bail|required|email|unique:contacts',
-            'client' => 'bail|required|boolean'
+            'client' => 'bail|boolean'
         ];
     }
 }

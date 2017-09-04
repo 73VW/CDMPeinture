@@ -84,7 +84,7 @@ body {
 }
 
 #mainNav {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.7);
   font-weight: bold;
 }
 
@@ -112,6 +112,13 @@ body {
   color: #990026;
 }
 
+#mainNav .navbar-brand img {
+  max-width: 14vh;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  margin: 0;
+}
+
 #mainNav .navbar-nav .nav-item .nav-link {
   font-size: 100%;
   font-weight: bold;
@@ -134,7 +141,7 @@ body {
     -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
     transition: padding-top 0.3s, padding-bottom 0.3s;
     border: none;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.7);
   }
 
   #mainNav .navbar-brand {
@@ -156,6 +163,10 @@ body {
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
     padding: 12px 0;
+  }
+
+  #mainNav.navbar-shrink .navbar-brand img {
+    max-width: 8vh;
   }
 }
 

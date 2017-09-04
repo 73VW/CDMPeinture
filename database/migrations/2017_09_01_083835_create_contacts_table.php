@@ -19,11 +19,11 @@ class CreateContactsTable extends Migration
         $table->string('nom');
         $table->string('rue');
         $table->integer('numero');
-        $table->integer('codePostal');
+        $table->string('codePostal');
         $table->string('ville');
         $table->string('numeroTel');
         $table->string('email');
-        $table->boolean('client');
+        $table->boolean('client')->default(false);
         $table->timestamps();
     });
     }

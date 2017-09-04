@@ -19,7 +19,9 @@
 </head>
 <body>
     <div id="app">
-        @yield('navbar')
+        @if(Route::currentRouteName()!='login')
+            @include('administration.navbar')
+        @endif
         @yield('content')
     </div>
 
