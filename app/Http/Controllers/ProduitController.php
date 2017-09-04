@@ -3,24 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\ContactCreateRequest;
-use App\Http\Requests\ContactUpdateRequest;
-use App\Repositories\ContactRepository;
-use App\Contact;
+use App\Http\Requests\ProduitRequest;
+use App\Repositories\ProduitRepository;
+use App\Produit;
 
-class ContactController extends Controller
+class ProduitController extends Controller
 {
-    protected $contactRepository;
+    protected $produitRepository;
     protected $nbrPerPage = 10;
     protected $repository;
     protected $nav;
 
-    public function __construct(ContactRepository $contactRepository)
+    public function __construct(ProduitRepository $produitRepository)
     {
-        $this->contactRepository = $contactRepository;
+        $this->produitRepository = $produitRepository;
 
         $this->middleware('auth');
-        $this->repository = 'administration/contact';
+        $this->repository = 'administration/produit';
     }
 
 
@@ -31,9 +30,9 @@ class ContactController extends Controller
     */
     public function index(Request $request)
     {
-        $contacts = $this->contactRepository->getPaginate($this->nbrPerPage);
+        $produits = $this->produitRepository->getPaginate($this->nbrPerPage);
 
-        return view($this->repository.'.index', compact('contacts'));
+        return view($this->repository.'.index', compact('produits'));
     }
     /**
     * Show the form for creating a new resource.
@@ -52,11 +51,11 @@ class ContactController extends Controller
     * @return \Illuminate\Http\Response
     */
 
-    public function store(ContactCreateRequest $request)
+    public function store(Request $request)
     {
-        $contact = $this->contactRepository->store($request->all());
+        $produit = $this->produitRepository->store($request->all());
 
-        return redirect()->route('contact.index')->withOk("L'utilisateur " . $contact->name . " a été créé.");
+        return redirect()->route('produit.index')->withOk("Le produit " . $produit->name . " a été créé.");
     }
 
     /**
@@ -65,7 +64,7 @@ class ContactController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function show(Contact $contact)
+    public function show(Produit $produit)
     {
         return view($this->repository.'.show', compact('contact'));
     }
@@ -76,7 +75,7 @@ class ContactController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function edit(Contact $contact)
+    public function edit(Produit $produit)
     {
         return view($this->repository.'.edit', compact('contact'));
     }
@@ -88,11 +87,11 @@ class ContactController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function update(ContactUpdateRequest $request, Contact $contact)
+    public function update(Request $request, Produit $produit)
     {
-        $this->contactRepository->update($contact, $request->all());
+        $this->produitRepository->update($produit, $request->all());
 
-        return redirect()->route('contact.index')->withOk("L'utilisateur " . $request->name . " a été modifié.");
+        return redirect()->route('produit.index')->withOk("Le produit " . $produit->name . " a été modifié.");
     }
 
     /**
@@ -101,9 +100,9 @@ class ContactController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function destroy(Contact $contact)
+    public function destroy(Produit $produit)
     {
-        $this->contactRepository->destroy($contact);
+        $this->produitRepository->destroy($produit);
 
         return back();
     }

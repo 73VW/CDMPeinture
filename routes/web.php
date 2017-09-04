@@ -23,6 +23,7 @@ Route::group(['prefix' => '/administration'], function() {
     Route::get('/charts', 'HomeController@charts');
     Route::get('/tables', 'HomeController@tables');
     Route::resource('/contact', 'ContactController');
+    Route::resource('/produit', 'ProduitController');
     Route::group(['prefix' => '/devis'], function(){
         Route::get('/', 'DevisController@index');
         Route::get('/list', 'DevisController@list');

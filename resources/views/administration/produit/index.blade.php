@@ -11,14 +11,13 @@
             @endif
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Liste des contacts</h3>
+                    <h3 class="panel-title">Liste des produits</h3>
                 </div>
                 <table class="table">
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Nom</th>
-                            <th>Prénom</th>
                             <th>Statut</th>
                             <th></th>
                             <th></th>
@@ -26,22 +25,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($contacts as $contact)
+                        @foreach ($produits as $produit)
                         <tr>
-                            <td>{!! $contact->id !!}</td>
-                            <td class="text-primary"><strong>{!! $contact->nom !!}</strong></td>
-                            <td class="text-primary"><strong>{!! $contact->prenom !!}</strong></td>
+                            <td>{!! $produit->id !!}</td>
+                            <td class="text-primary"><strong>{!! $produit->nom!!}</strong></td>
                             <td class="text-primary"><strong>
-                                @if($contact->client==true)
-                                    Client
+                                @if($produit->produit==true)
+                                    Produit
                                 @else
-                                    Fournisseur
+                                    Prestation
                                 @endif
                             </strong> </td>
-                            <td>{!! link_to_route('contact.show', 'Voir', [$contact->id], ['class' => 'btn btn-success btn-block']) !!}</td>
-                            <td>{!! link_to_route('contact.edit', 'Modifier', [$contact->id], ['class' => 'btn btn-warning btn-block']) !!}</td>
+                            <td>{!! link_to_route('produit.show', 'Voir', [$produit->id], ['class' => 'btn btn-success btn-block']) !!}</td>
+                            <td>{!! link_to_route('produit.edit', 'Modifier', [$produit->id], ['class' => 'btn btn-warning btn-block']) !!}</td>
                             <td>
-                                {!! Form::open(['method' => 'DELETE', 'route' => ['contact.destroy', $contact->id]]) !!}
+                                {!! Form::open(['method' => 'DELETE', 'route' => ['produit.destroy', $produit->id]]) !!}
                                 {!! Form::submit('Supprimer', ['class' => 'btn btn-danger btn-block', 'onclick' => 'return confirm(\'Vraiment supprimer cet utilisateur ?\')']) !!}
                                 {!! Form::close() !!}
                             </td>
@@ -50,10 +48,10 @@
                         @endforeach
                     </tbody>
                 </table>
-                {!! $contacts->links() !!}
+                {!! $produits->links() !!}
             </div>
 
-            {!! link_to_route('contact.create', 'Ajouter un contact', [], ['class' => 'btn btn-info pull-right']) !!}
+            {!! link_to_route('produit.create', 'Ajouter un produit', [], ['class' => 'btn btn-info pull-right']) !!}
         </div>
     </div>
 </div>

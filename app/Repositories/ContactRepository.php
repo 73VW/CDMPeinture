@@ -1,7 +1,6 @@
 <?php
 namespace App\Repositories;
 use App\Contact;
-use App\Repositories\ContactRepositoryInterface;
 
 class ContactRepository
 {
@@ -14,7 +13,12 @@ class ContactRepository
 
     public function getPaginate($n)
     {
-        return $this->contact->paginate($n);
+        return $this->contact->orderBy('client', 'desc')->paginate($n);
+    }
+
+    public function client($bool, $n)
+    {
+        return $this->contact->where('client', $bool)->paginate($n);
     }
 
     public function store(Array $inputs)
