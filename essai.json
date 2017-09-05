@@ -1,0 +1,45 @@
+{
+    "1": {
+        "texte": "Cuisine",
+        "quantite": "0",
+        "unite": "",
+        "prixUnit": "0",
+        "montant": "0"
+    },
+    "2": {
+        "texte": "Chambre",
+        "quantite": "0",
+        "unite": "",
+        "prixUnit": "0",
+        "montant": "0"
+    },
+    "1.1": {
+        "texte": "Plafond",
+        "quantite": "198",
+        "unite": "m2",
+        "prixUnit": "20",
+        "montant": "3960"
+    },
+    "1.2": {
+        "texte": "Mur",
+        "quantite": "2",
+        "unite": "m2",
+        "prixUnit": "60",
+        "montant": "120"
+    },
+    "2.1": {
+        "texte": "Plafond",
+        "quantite": "198",
+        "unite": "m2",
+        "prixUnit": "20",
+        "montant": "3960"
+    },
+    "2.2": {
+        "texte": "",
+        "quantite": "0",
+        "unite": "",
+        "prixUnit": "0",
+        "montant": "0"
+    },
+    "montantTotal": "8040"
+}

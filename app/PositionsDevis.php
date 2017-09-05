@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-class Devis extends Model
+class PositionsDevis extends Model
 {
 
     /**
@@ -12,8 +12,8 @@ class Devis extends Model
      * @var array
     */
     protected $fillable = [
-        'valeurTVA', 'description', 'dateOuverture', 'devis', 'chantier_id'
+        'position', 'texte', 'enTeteDevis_id'
     ];
 
-    protected $table = 'entetedevis';
+    protected $table = 'positionsdevis';
 }

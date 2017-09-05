@@ -20,6 +20,7 @@ class CreateChantiersTable extends Migration
             $table->string('codePostal');
             $table->string('ville');
             $table->string('description');
+            $table->boolean('ouvert')->default(true);
 
             $table->integer('contact_id')->unsigned();
             $table->foreign('contact_id')

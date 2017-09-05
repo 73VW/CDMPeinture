@@ -15,6 +15,8 @@ class CreateDetailsDevisTable extends Migration
     {
         Schema::create('detailsDevis', function(Blueprint $table) {
             $table->float('prixUnitaire');
+            $table->float('quantite');
+            $table->string('unite');
 
             $table->integer('positionsDevis_id')->unsigned();
             $table->foreign('positionsDevis_id')

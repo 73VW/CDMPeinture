@@ -12,7 +12,7 @@ class Chantier extends Model
      * @var array
      */
     protected $fillable = [
-        'rue', 'numero', 'codePostal', 'ville', 'description', 'contact_id'
+        'rue', 'numero', 'codePostal', 'ville', 'description', 'ouvert', 'contact_id'
     ];
 
     public function contact()
