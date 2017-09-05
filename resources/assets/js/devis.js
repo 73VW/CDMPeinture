@@ -94,9 +94,7 @@ $( document ).ready(function() {
 		 });
 	});
 
-	$('#sauvegarder').click(function(e){
-		let idDevis = $('#num_devis').val();
-		let objDevis = $('#obj_devis').val();
+	$('#form').submit(function(e){
 
 		let position = 1;
 		let texte = "";
@@ -105,9 +103,12 @@ $( document ).ready(function() {
 		let prixUnit = 0;
 		let montant = 0;
 
-		let jsonString = '{ "idDevis" : "'+idDevis+'", "objDevis" : "'+objDevis+'",';
+		let jsonString = '{';
 
 		let code = "";
+
+		let titre = 1;
+		let sous_titre = 1;
 
 		for(let i = 1; i <= ligne; i++){
 
@@ -115,6 +116,11 @@ $( document ).ready(function() {
 
 			if (!isNaN(code) && code != ""){
 				position = code;
+				titre = code
+				sous_titre = 1;
+			}else{
+				position = titre+'.'+sous_titre;
+				sous_titre++;
 			}
 			
 			texte = $("#texte"+i+" input").val();
@@ -135,7 +141,6 @@ $( document ).ready(function() {
         .attr('name', "jsonObject")
 	    .attr('value', jsonString)
         .appendTo('#form');
-        alert('submit');      
 	});
 	
 });

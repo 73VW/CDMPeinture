@@ -10425,9 +10425,7 @@ module.exports = __webpack_require__(211);
 		});
 	});
 
-	$('#sauvegarder').click(function (e) {
-		var idDevis = $('#num_devis').val();
-		var objDevis = $('#obj_devis').val();
+	$('#form').submit(function (e) {
 
 		var position = 1;
 		var texte = "";
@@ -10436,9 +10434,12 @@ module.exports = __webpack_require__(211);
 		var prixUnit = 0;
 		var montant = 0;
 
-		var jsonString = '{ "idDevis" : "' + idDevis + '", "objDevis" : "' + objDevis + '",';
+		var jsonString = '{';
 
 		var code = "";
+
+		var titre = 1;
+		var sous_titre = 1;
 
 		for (var i = 1; i <= ligne; i++) {
 
@@ -10446,6 +10447,11 @@ module.exports = __webpack_require__(211);
 
 			if (!isNaN(code) && code != "") {
 				position = code;
+				titre = code;
+				sous_titre = 1;
+			} else {
+				position = titre + '.' + sous_titre;
+				sous_titre++;
 			}
 
 			texte = $("#texte" + i + " input").val();
@@ -10462,7 +10468,6 @@ module.exports = __webpack_require__(211);
 		jsonString += '"montantTotal" : "' + montantTotal + '"}';
 
 		$('<input />').attr('type', 'hidden').attr('name', "jsonObject").attr('value', jsonString).appendTo('#form');
-		alert('submit');
 	});
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
