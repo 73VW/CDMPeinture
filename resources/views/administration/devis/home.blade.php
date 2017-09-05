@@ -67,13 +67,12 @@
                             </tfoot>
                         </table>
                     </div>
-                </div>
-                <div>
-                {{ Form::submit('Enregistrer !', ['id' => 'sauvegarder', 'class' => 'btn btn-primary btn-block col-sm-3']) }}
-                    {{ Form::close() }}
+                    <div>
+                        {{ Form::submit('Enregistrer !', ['id' => 'sauvegarder', 'class' => 'btn btn-primary btn-block col-sm-3']) }}
+                        {{ Form::close() }}
+                    </div>
                 </div>
             </div>
-
         </div>
         <!-- /.container-fluid -->
 

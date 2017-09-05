@@ -10373,7 +10373,15 @@ module.exports = __webpack_require__(211);
 					//TODO : interpréter le code entré
 					$("#code_input" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text value = ' + code + '>');
 					$("#texte" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text value = ' + texte + '>');
+					$("#quantite" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=number value = 0>');
+					$("#unite" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text>');
+					$("#prix_unit" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=number value = 0>');
+					$("#montant" + ligneCalcul).append('0 frs');
 				} else {
+					$("#quantite" + ligneCalcul).empty();
+					$("#unite" + ligneCalcul).empty();
+					$("#prix_unit" + ligneCalcul).empty();
+					$("#montant" + ligneCalcul).empty();
 					$("#code_input" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text style=font-weight:bold; value = ' + code + '>');
 					$("#texte" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text style=font-weight:bold; value = ' + texte + '>');
 				}
@@ -10460,7 +10468,11 @@ module.exports = __webpack_require__(211);
 			prixUnit = $('#prix_unit' + i + ' input').val();
 			montant = parseInt($("#montant" + i).text().slice(0, -4));
 
-			jsonString += '"' + position + '" : { "texte" : "' + texte + '", "quantite" : "' + quantite + '",' + '"unite" : "' + unite + '", "prixUnit" : "' + prixUnit + '", "montant" : "' + montant + '" }, ';
+			if (!isNaN(code) && code != "") {
+				jsonString += '"' + position + '" : { "texte" : "' + texte + '"}, ';
+			} else {
+				jsonString += '"' + position + '" : { "texte" : "' + texte + '", "quantite" : "' + quantite + '",' + '"unite" : "' + unite + '", "prixUnit" : "' + prixUnit + '", "montant" : "' + montant + '" }, ';
+			}
 		}
 
 		var montantTotal = parseInt($("#montantTot").text().slice(0, -4));
