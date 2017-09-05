@@ -10368,6 +10368,10 @@ module.exports = __webpack_require__(211);
 				var texte = $("#texte" + ligneCalcul + " input").val();
 				$("#code_input" + ligneCalcul).empty();
 				$("#texte" + ligneCalcul).empty();
+				$("#quantite" + ligneCalcul).empty();
+				$("#unite" + ligneCalcul).empty();
+				$("#prix_unit" + ligneCalcul).empty();
+				$("#montant" + ligneCalcul).empty();
 
 				if (isNaN(code) || code == "") {
 					// TODO : interpréter le code entré
@@ -10387,10 +10391,6 @@ module.exports = __webpack_require__(211);
 					$("#prix_unit" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=number value = 0>');
 					$("#montant" + ligneCalcul).append('0 frs');
 				} else {
-					$("#quantite" + ligneCalcul).empty();
-					$("#unite" + ligneCalcul).empty();
-					$("#prix_unit" + ligneCalcul).empty();
-					$("#montant" + ligneCalcul).empty();
 					$("#code_input" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text style=font-weight:bold; value = ' + code + '>');
 					$("#texte" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text style=font-weight:bold; value = ' + texte + '>');
 				}
@@ -10479,7 +10479,7 @@ module.exports = __webpack_require__(211);
 
 			if (!isNaN(code) && code != "") {
 				jsonString += '"' + position + '" : { "texte" : "' + texte + '"}, ';
-			} else if (code != "" && texte != "") {
+			} else if (texte != "") {
 				jsonString += '"' + position + '" : { "texte" : "' + texte + '", "quantite" : "' + quantite + '",' + '"unite" : "' + unite + '", "prixUnit" : "' + prixUnit + '", "montant" : "' + montant + '" }, ';
 			}
 		}
