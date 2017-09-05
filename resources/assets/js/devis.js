@@ -94,7 +94,7 @@ $( document ).ready(function() {
 		 });
 	});
 
-	$('#sauvegarder').submit(function(e){
+	$('#sauvegarder').click(function(e){
 		let idDevis = $('#num_devis').val();
 		let objDevis = $('#obj_devis').val();
 
@@ -109,7 +109,8 @@ $( document ).ready(function() {
 
 		let code = "";
 
-		for(let i = 0; i <= ligne; i++){
+		for(let i = 1; i <= ligne; i++){
+
 			code = $("#code_input"+i+" input").val();
 
 			if (!isNaN(code) && code != ""){
@@ -124,19 +125,17 @@ $( document ).ready(function() {
 
 			jsonString += '"'+position+'" : { "texte" : "'+texte+'", "quantite" : "'+quantite+'",'+
 						  '"unite" : "'+unite+'", "prixUnit" : "'+prixUnit+'", "montant" : "'+montant+'" }, ';
-		}
+		}  
 
-		let montantTotal = parseInt($("#montantTot"+i).text().slice(0,-4));
+		let montantTotal = parseInt($("#montantTot").text().slice(0,-4));
 
 		jsonString += '"montantTotal" : "'+montantTotal+'"}';
 
-		let jsonObject = jQuery.parseJSON(jsonString);
-
-		let script = 'https://cdmpeinture.dev/administration/devis';
-		
-		$.post(script, {
-			json : jsonObject
-		});
+		$('<input />').attr('type', 'hidden')
+        .attr('name', "jsonObject")
+	    .attr('value', jsonString)
+        .appendTo('#form');
+        alert('submit');      
 	});
 	
 });

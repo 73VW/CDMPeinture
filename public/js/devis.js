@@ -10349,9 +10349,9 @@ module.exports = __webpack_require__(211);
 		var sousTot = 0;
 		var total = 0;
 
-		for (var _i = 1; _i <= ligne; _i++) {
+		for (var i = 1; i <= ligne; i++) {
 
-			sousTot = parseInt($("#montant" + _i).text().slice(0, -4));
+			sousTot = parseInt($("#montant" + i).text().slice(0, -4));
 
 			total += sousTot;
 		}
@@ -10425,7 +10425,7 @@ module.exports = __webpack_require__(211);
 		});
 	});
 
-	$('#sauvegarder').submit(function (e) {
+	$('#sauvegarder').click(function (e) {
 		var idDevis = $('#num_devis').val();
 		var objDevis = $('#obj_devis').val();
 
@@ -10436,27 +10436,33 @@ module.exports = __webpack_require__(211);
 		var prixUnit = 0;
 		var montant = 0;
 
-		var jsonString = '{ "idDevis" : "' + idDevis + '", "objDevis" : "' + objDevis + '"';
+		var jsonString = '{ "idDevis" : "' + idDevis + '", "objDevis" : "' + objDevis + '",';
 
-		for (var _i2 = 0; _i2 <= ligne; _i2++) {
-			position = $("#code_input" + _i2 + " input").val();
-			texte = $("#texte" + _i2 + " input").val();
-			quantite = $('#quantite' + _i2 + " input").val();
-			unite = $('#unite' + _i2 + ' input').val();
-			prixUnit = $('#prix_unit' + _i2 + ' input').val();
-			montant = parseInt($("#montant" + _i2).text().slice(0, -4));
+		var code = "";
 
-			jsonString += '"position" : "' + position + '", "texte" : "' + texte + '", "quantite" : "' + quantite + '",' + '"unite" : "' + unite + '", "prixUnit" : "' + prixUnit + '", "montant" : "' + montant + '" ';
+		for (var i = 1; i <= ligne; i++) {
+
+			code = $("#code_input" + i + " input").val();
+
+			if (!isNaN(code) && code != "") {
+				position = code;
+			}
+
+			texte = $("#texte" + i + " input").val();
+			quantite = $('#quantite' + i + " input").val();
+			unite = $('#unite' + i + ' input').val();
+			prixUnit = $('#prix_unit' + i + ' input').val();
+			montant = parseInt($("#montant" + i).text().slice(0, -4));
+
+			jsonString += '"' + position + '" : { "texte" : "' + texte + '", "quantite" : "' + quantite + '",' + '"unite" : "' + unite + '", "prixUnit" : "' + prixUnit + '", "montant" : "' + montant + '" }, ';
 		}
 
-		var montantTotal = parseInt($("#montantTot" + i).text().slice(0, -4));
+		var montantTotal = parseInt($("#montantTot").text().slice(0, -4));
 
-		var script = window.location.href;
-		$.post(script, {
-			id: dataMessage,
-			nomfrom: userName,
-			nomto: nomDestinataire
-		});
+		jsonString += '"montantTotal" : "' + montantTotal + '"}';
+
+		$('<input />').attr('type', 'hidden').attr('name', "jsonObject").attr('value', jsonString).appendTo('#form');
+		alert('submit');
 	});
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))

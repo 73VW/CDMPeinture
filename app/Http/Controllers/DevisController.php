@@ -54,8 +54,8 @@ class DevisController extends Controller
     public function store(Request $request)
     {
         //$devis = $this->devisRepository->store($request->all());
-
-        return redirect()->route('devis.index')->withOk(var_dump($request));
+        echo "<pre>", var_dump($request->all()), "</pre>";
+        //return redirect()->route('devis.index')->withOk(var_dump($request));
     }
 
     /**
