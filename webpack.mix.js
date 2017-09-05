@@ -13,11 +13,17 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js');
 mix.js('resources/assets/js/devis.js', 'public/js');
+mix.js('resources/assets/js/jquery-3.2.1.min.js', 'public/js');
 mix.js([
     'resources/assets/agency/js/jqBootstrapValidation.js',
     'resources/assets/agency/js/contact_me.js',
     'resources/assets/agency/js/agency.js'], 'public/js/agency.js');
 mix.js('resources/assets/startbootstrap-sb-admin-master/js/sb-admin.js', 'public/js/sbadmin.js');
+
+mix.autoload({
+  jquery: ['$', 'window.jQuery', 'jQuery'],
+  moment: 'moment'
+});
 
 mix.sass('resources/assets/sass/app.scss',  'public/css');
 mix.sass('resources/assets/agency/scss/agency.scss',  'public/css');

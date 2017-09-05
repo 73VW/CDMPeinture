@@ -21,16 +21,16 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                    {{ Form::open(['route' => 'store.contact', 'class' => 'form-horizontal']) }}
+                    {{ Form::open(['route' => 'contact.store', 'class' => 'form-horizontal']) }}
                     {{ csrf_field() }}
                     <div class="form-group row{{ $errors->has('devisNum') ? ' has-error' : '' }}">
                         {{ Form::label('devisNum', 'N° du devis', array('class' => 'col-sm-2 text-muted')) }}
-                        {{ Form::text('devisNum', null, array('class' => 'form-control col-sm-6', 'required' => 'required', 'autofocus' => 'autofocus')) }}
+                        {{ Form::text('devisNum', null, array('id' => 'num_devis' ,'class' => 'form-control col-sm-6', 'required' => 'required', 'autofocus' => 'autofocus')) }}
                         {{ $errors->first('devisNum', '<small class="help-block">:message</small>') }}
                     </div>
                     <div class="form-group row{{ $errors->has('devisObj') ? ' has-error' : '' }}">
                         {{ Form::label('devisObj', 'Objet du devis', array('class' => 'col-sm-2 text-muted')) }}
-                        {{ Form::text('devisObj', null, array('class' => 'form-control col-sm-6', 'required' => 'required')) }}
+                        {{ Form::text('devisObj', null, array('id' => 'obj_devis' ,'class' => 'form-control col-sm-6', 'required' => 'required')) }}
                         {{ $errors->first('devisObj', '<small class="help-block">:message</small>') }}
                      </div>
 
@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <div>
-                {{ Form::submit('Enregistrer !', ['class' => 'btn btn-primary btn-block col-sm-3']) }}
+                {{ Form::submit('Enregistrer !', ['id' => 'sauvegarder', 'class' => 'btn btn-primary btn-block col-sm-3']) }}
                     {{ Form::close() }}
                 </div>
             </div>

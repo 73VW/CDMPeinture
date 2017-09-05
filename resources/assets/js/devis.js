@@ -93,4 +93,35 @@ $( document ).ready(function() {
 		   });
 		 });
 	});
+
+	$('#sauvegarder').submit(function(e){
+		let idDevis = $('#num_devis').val();
+		let objDevis = $('#obj_devis').val();
+
+		let position = 1;
+		let texte = "";
+		let quantite = 0;
+		let unite = "";
+		let prixUnit = 0;
+		let montant = 0;
+
+		for(let i = 0; i <= ligne; i++){
+			position = $("#code_input"+i+" input").val();
+			texte = $("#texte"+i+" input").val();
+			quantite = $('#quantite'+i+" input").val();
+			unite = $('#unite'+i+' input').val();
+			prixUnit = $('#prix_unit'+i+' input').val();
+			montant = parseInt($("#montant"+i).text().slice(0,-4));
+		}
+
+		let montantTotal = parseInt($("#montantTot"+i).text().slice(0,-4));
+
+		let script = window.location.href;
+		$.post(script, {
+			id: dataMessage,
+			nomfrom: userName,
+			nomto: nomDestinataire
+		});
+	});
+	
 });
