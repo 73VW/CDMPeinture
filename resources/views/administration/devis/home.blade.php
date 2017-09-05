@@ -94,5 +94,5 @@
     </a>
 
     <script src="{{ asset('js/devis.js') }}"></script>
-    
+
     @endsection

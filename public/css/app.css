@@ -9214,3 +9214,10 @@ a.text-dark:hover {
   background-color: #b1c8d8;
 }
 
+.btn-retour::before {
+  font-family: 'FontAwesome';
+  content: '\F060';
+  padding-left: 5px;
+  padding-right: 5px;
+}
+

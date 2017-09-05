@@ -18,8 +18,8 @@
                     <p>Statut : {{ $contact->client==1 ? 'Client' : 'Fournisseur' }}</p>
                 </div>
             </div>
-            <a href="javascript:history.back()" class="btn btn-primary">
-                <span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
+            <a href="javascript:history.back()" class="btn btn-primary btn-retour">
+                Retour
             </a>
         </div>
 

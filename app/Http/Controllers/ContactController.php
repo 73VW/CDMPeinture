@@ -67,7 +67,8 @@ class ContactController extends Controller
     */
     public function show(Contact $contact)
     {
-        return view($this->repository.'.show', compact('contact'));
+        $chantiers = $contact->chantiers;
+        return view($this->repository.'.show', compact('contact', 'chantiers'));
     }
 
     /**

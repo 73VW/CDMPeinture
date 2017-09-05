@@ -51,7 +51,7 @@ class ProduitController extends Controller
     * @return \Illuminate\Http\Response
     */
 
-    public function store(Request $request)
+    public function store(ProduitRequest $request)
     {
         $produit = $this->produitRepository->store($request->all());
 
@@ -100,7 +100,7 @@ class ProduitController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function destroy(Produit $produit)
+    public function destroy(ProduitRequest $produit)
     {
         $this->produitRepository->destroy($produit);
 

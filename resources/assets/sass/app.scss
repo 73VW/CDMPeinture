@@ -32,3 +32,10 @@
         background-color: darken($body-bg, 20%);
     }
 }
+
+.btn-retour::before{
+    font-family: 'FontAwesome';
+    content: '\f060';
+    padding-left: 5px;
+    padding-right: 5px;
+}

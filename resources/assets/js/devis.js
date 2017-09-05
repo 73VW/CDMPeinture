@@ -105,6 +105,8 @@ $( document ).ready(function() {
 		let prixUnit = 0;
 		let montant = 0;
 
+		let jsonString = "";
+
 		for(let i = 0; i <= ligne; i++){
 			position = $("#code_input"+i+" input").val();
 			texte = $("#texte"+i+" input").val();
@@ -112,6 +114,8 @@ $( document ).ready(function() {
 			unite = $('#unite'+i+' input').val();
 			prixUnit = $('#prix_unit'+i+' input').val();
 			montant = parseInt($("#montant"+i).text().slice(0,-4));
+
+			jsonString = "";
 		}
 
 		let montantTotal = parseInt($("#montantTot"+i).text().slice(0,-4));
