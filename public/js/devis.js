@@ -10370,7 +10370,16 @@ module.exports = __webpack_require__(211);
 				$("#texte" + ligneCalcul).empty();
 
 				if (isNaN(code) || code == "") {
-					//TODO : interpréter le code entré
+					// TODO : interpréter le code entré
+					// let script = "{{ asset('js/script.php') }}";
+
+					// $.post(script, {
+					// 	code_input : code
+					// }).done(function(data) {
+					// 	code = "";
+					// 	texte = data;
+					// });
+
 					$("#code_input" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text value = ' + code + '>');
 					$("#texte" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text value = ' + texte + '>');
 					$("#quantite" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=number value = 0>');
@@ -10470,7 +10479,7 @@ module.exports = __webpack_require__(211);
 
 			if (!isNaN(code) && code != "") {
 				jsonString += '"' + position + '" : { "texte" : "' + texte + '"}, ';
-			} else {
+			} else if (code != "" && texte != "") {
 				jsonString += '"' + position + '" : { "texte" : "' + texte + '", "quantite" : "' + quantite + '",' + '"unite" : "' + unite + '", "prixUnit" : "' + prixUnit + '", "montant" : "' + montant + '" }, ';
 			}
 		}
