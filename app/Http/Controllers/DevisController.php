@@ -3,42 +3,108 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+//use App\Http\Requests\DevisRequest;
+use App\Repositories\DevisRepository;
+use App\Devis;
 
 class DevisController extends Controller
 {
-    /**
-    * Create a new controller instance.
-    *
-    * @return void
-    */
+    protected $devisRepository;
+    protected $nbrPerPage = 10;
+    protected $repository;
+    protected $nav;
 
-    private $directory;
-    private $subdirectory;
-
-    private $nav;
-    public function __construct()
+    public function __construct(DevisRepository $devisRepository)
     {
-        $this->directory = 'administration';
-        $this->subdirectory = 'devis';
+        $this->devisRepository = $devisRepository;
+
         $this->middleware('auth');
-        $this->nav = view($this->directory.'.navbar');
+        $this->repository = 'administration/devis';
     }
 
+
     /**
-    * Show the application dashboard.
+    * Display a listing of the resource.
     *
     * @return \Illuminate\Http\Response
     */
-    public function index()
+    public function index(Request $request)
     {
-        return $this->nav.view($this->directory.'.'.$this->subdirectory.'.home');
+        $deviss = $this->devisRepository->getPaginate($this->nbrPerPage);
+
+        return view($this->repository.'.index', compact('deviss'));
     }
-    public function list()
+    /**
+    * Show the form for creating a new resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function create()
     {
-        return $this->nav.view($this->directory.'.'.$this->subdirectory.'.list');
+        return view($this->repository.'.home');
     }
-    public function new()
+
+    /**
+    * Store a newly created resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @return \Illuminate\Http\Response
+    */
+
+    public function store(Request $request)
     {
-        return $this->nav.view($this->directory.'.'.$this->subdirectory.'.new');
+        //$devis = $this->devisRepository->store($request->all());
+
+        return redirect()->route('devis.index')->withOk(var_dump($request));
+    }
+
+    /**
+    * Display the specified resource.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
+    public function show(Devis $devis)
+    {
+        $chantiers = $devis->chantiers;
+        return view($this->repository.'.show', compact('devis', 'chantiers'));
+    }
+
+    /**
+    * Show the form for editing the specified resource.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
+    public function edit(Devis $devis)
+    {
+        return view($this->repository.'.edit', compact('devis'));
+    }
+
+    /**
+    * Update the specified resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
+    public function update(Request $request, Devis $devis)
+    {
+        $this->devisRepository->update($devis, $request->all());
+
+        return redirect()->route('devis.index')->withOk("L'utilisateur " . $request->name . " a été modifié.");
+    }
+
+    /**
+    * Remove the specified resource from storage.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
+    public function destroy(Devis $devis)
+    {
+        $this->devisRepository->destroy($devis);
+
+        return back();
     }
 }

@@ -24,11 +24,7 @@ Route::group(['prefix' => '/administration'], function() {
     Route::resource('/chantier', 'ChantierController');
     Route::resource('/contact', 'ContactController');
     Route::resource('/produit', 'ProduitController');
-    Route::group(['prefix' => '/devis'], function(){
-        Route::get('/', 'DevisController@index');
-        Route::get('/list', 'DevisController@list');
-        Route::get('/new', 'DevisController@new');
-    });
+    Route::resource('/devis', 'DevisController');
     Route::get('/links', 'HomeController@links')->name('links');
 
 });

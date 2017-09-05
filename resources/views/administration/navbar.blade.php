@@ -9,7 +9,7 @@
             @include('administration.navlink', ['href' => '/administration/produit', 'name' => 'Produits'])
             @include('administration.navlink', ['href' => '/administration/chantier', 'name' => 'Chantiers'])
             @include('administration.navlink', ['href' => '/administration/contact', 'name' => 'Contacts'])
-            @include('administration.multilevelnavlink', ['href' => '/administration/devis', 'name' => 'Devis', 'links' => [['name' =>'Nouveau', 'href' => 'new'], ['name' =>'Liste', 'href' => 'list']]])
+            @include('administration.navlink', ['href' => '/administration/devis', 'name' => 'Devis'])
             @include('administration.navlink', ['href' => '/register', 'name' => 'Nouvel employé'])
         </ul>
         <ul class="navbar-nav sidenav-toggler">

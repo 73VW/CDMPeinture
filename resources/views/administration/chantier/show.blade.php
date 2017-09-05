@@ -8,18 +8,18 @@
         <div class="col-sm-offset-4 col-sm-4">
             <br>
             <div class="panel panel-primary">
-                <div class="panel-heading">Fiche d'utilisateur</div>
+                <div class="panel-heading">Fiche chantier</div>
                 <div class="panel-body">
-                    <p>Nom : {{ $contact->nom }}</p>
-                    <p>Prénom : {{ $contact->prenom }}</p>
-                    <p>Adresse : {{ $contact->rue.' '.$contact->numero.', '.$contact->codePostal.' '.$contact->ville }}</p>
-                    <p>Numéro de téléphone : {{ $contact->numeroTel }}</p>
-                    <p>Adresse e-mail : {{ $contact->email }}</p>
-                    <p>Statut : {{ $contact->client==1 ? 'Client' : 'Fournisseur' }}</p>
+                    <p>Description : {{ $chantier->description }}</p>
+                    <p>Adresse : {{ $chantier->rue.' '.$chantier->numero.', '.$chantier->codePostal.' '.$chantier->ville }}</p>
+                    <p>
+                        Client : {!!link_to_route_html('contact.show', $contact->prenom. ' '.$contact->nom.' <i class="fa fa-arrow-right" aria-hidden="true"></i>
+ Voir', [$contact->id], ['class' => 'btn btn-success btn-block'])!!}
+                    </p>
                 </div>
             </div>
-            <a href="javascript:history.back()" class="btn btn-primary">
-                <span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
+            <a href="javascript:history.back()" class="btn btn-primary btn-retour">
+                Retour
             </a>
         </div>
 

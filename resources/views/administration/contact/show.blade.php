@@ -44,8 +44,9 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <a href="javascript:history.back()" class="btn btn-primary">
-                        <i class="fa fa-arrow-left" aria-hidden="true"></i> Retour
+                    {!! link_to_route('chantier.create', 'Ajouter un chantier', ['contact_id' => $contact->id], ['class' => 'btn btn-info pull-right']) !!}
+                    <a href="javascript:history.back()" class="btn btn-primary btn-retour">
+                        Retour
                     </a>
                 </div>
             </div>

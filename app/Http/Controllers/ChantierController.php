@@ -39,8 +39,12 @@ class ChantierController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-    public function create()
+    public function create(Request $request)
     {
+        if($request->has('contact_id')){
+            $contact = $request->contact_id;
+            return view($this->repository.'.create', compact('contact'));
+        }
         return view($this->repository.'.create');
     }
 
@@ -66,7 +70,8 @@ class ChantierController extends Controller
     */
     public function show(Chantier $chantier)
     {
-        return view($this->repository.'.show', compact('chantier'));
+        $contact = $chantier->contact;
+        return view($this->repository.'.show', compact('chantier', 'contact'));
     }
 
     /**
