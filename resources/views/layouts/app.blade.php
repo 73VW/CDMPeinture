@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/sb-admin.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/dataTables.bootstrap4.css') }}">
     <link href="{{ asset('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
-    
+
 </head>
 <body>
     <div id="app">
@@ -30,7 +30,7 @@
     <!-- Scripts -->
 
     <!-- Bootstrap core JavaScript -->
-    
+
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/sbadmin.js') }}"></script>
 </body>

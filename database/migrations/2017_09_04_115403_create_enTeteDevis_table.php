@@ -16,7 +16,8 @@ class CreateEnTeteDevisTable extends Migration
         Schema::create('enTeteDevis', function(Blueprint $table) {
             $table->increments('id');
             $table->float('valeurTVA');
-            $table->timestamp('dateOuverture');
+            $table->string('description');
+            $table->date('dateOuverture');
             $table->boolean('devis');
             $table->integer('chantier_id')->unsigned();
             $table->foreign('chantier_id')

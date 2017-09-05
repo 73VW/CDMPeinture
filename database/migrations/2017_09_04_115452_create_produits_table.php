@@ -20,6 +20,7 @@ class CreateProduitsTable extends Migration
             $table->integer('stock')->unsigned();
             $table->string('unite');
             $table->boolean('produit');
+            $table->string('code');
 
             $table->integer('contact_id')->unsigned()->default(0);
             $table->foreign('contact_id')

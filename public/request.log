@@ -89,3 +89,131 @@ Array
     [devisNum] => 1
     [devisObj] => 1
 )
+Array
+(
+    [_token] => cHxyM3PwoH6y3Uc2cgOJQGsgOTPjEdkmftaGfc6r
+    [devisNum] => 123
+    [devisObj] => dsa
+    [jsonObject] => { "idDevis" : "123", "objDevis" : "dsa","1" : { "texte" : "dsaf", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "montantTotal" : "0"}
+)
+Array
+(
+    [_token] => cHxyM3PwoH6y3Uc2cgOJQGsgOTPjEdkmftaGfc6r
+    [devisNum] => 123
+    [devisObj] => dsa
+    [jsonObject] => { "1" : { "texte" : "dsaf", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "montantTotal" : "0"}
+)
+Array
+(
+    [_token] => cHxyM3PwoH6y3Uc2cgOJQGsgOTPjEdkmftaGfc6r
+    [devisNum] => 123
+    [devisObj] => dsa
+    [jsonObject] => { "1" : { "texte" : "Cuisine", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "1" : { "texte" : "Plafond", "quantite" : "15","unite" : "m2", "prixUnit" : "18", "montant" : "270" }, "montantTotal" : "270"}
+)
+Array
+(
+    [_token] => cHxyM3PwoH6y3Uc2cgOJQGsgOTPjEdkmftaGfc6r
+    [devisNum] => 123
+    [devisObj] => dsa
+    [jsonObject] => {"1" : { "texte" : "Cuisine", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "1.1" : { "texte" : "Plafond", "quantite" : "198","unite" : "m2", "prixUnit" : "20", "montant" : "3960" }, "1.2" : { "texte" : "Mur", "quantite" : "2","unite" : "m2", "prixUnit" : "60", "montant" : "120" }, "2" : { "texte" : "Chambre", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "2.1" : { "texte" : "Plafond", "quantite" : "198","unite" : "m2", "prixUnit" : "20", "montant" : "3960" }, "2.2" : { "texte" : "", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "montantTotal" : "8040"}
+)
+Array
+(
+    [_token] => cHxyM3PwoH6y3Uc2cgOJQGsgOTPjEdkmftaGfc6r
+    [devisNum] => 123
+    [devisObj] => dsa
+    [jsonObject] => {"1" : { "texte" : "Cuisine", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "1.1" : { "texte" : "Plafond", "quantite" : "198","unite" : "m2", "prixUnit" : "20", "montant" : "3960" }, "1.2" : { "texte" : "Mur", "quantite" : "2","unite" : "m2", "prixUnit" : "60", "montant" : "120" }, "2" : { "texte" : "Chambre", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "2.1" : { "texte" : "Plafond", "quantite" : "198","unite" : "m2", "prixUnit" : "20", "montant" : "3960" }, "2.2" : { "texte" : "", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "montantTotal" : "8040"}
+)
+Array
+(
+    [_token] => cHxyM3PwoH6y3Uc2cgOJQGsgOTPjEdkmftaGfc6r
+    [devisNum] => 123
+    [devisObj] => dsa
+    [jsonObject] => {"1" : { "texte" : "Cuisine", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "1.1" : { "texte" : "Plafond", "quantite" : "198","unite" : "m2", "prixUnit" : "20", "montant" : "3960" }, "1.2" : { "texte" : "Mur", "quantite" : "2","unite" : "m2", "prixUnit" : "60", "montant" : "120" }, "2" : { "texte" : "Chambre", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "2.1" : { "texte" : "Plafond", "quantite" : "198","unite" : "m2", "prixUnit" : "20", "montant" : "3960" }, "2.2" : { "texte" : "", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "montantTotal" : "8040"}
+)
+Array
+(
+    [_token] => cHxyM3PwoH6y3Uc2cgOJQGsgOTPjEdkmftaGfc6r
+    [devisNum] => 123
+    [devisObj] => dsa
+    [jsonObject] => {"1" : { "texte" : "Cuisine", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "1.1" : { "texte" : "Plafond", "quantite" : "198","unite" : "m2", "prixUnit" : "20", "montant" : "3960" }, "1.2" : { "texte" : "Mur", "quantite" : "2","unite" : "m2", "prixUnit" : "60", "montant" : "120" }, "2" : { "texte" : "Chambre", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "2.1" : { "texte" : "Plafond", "quantite" : "198","unite" : "m2", "prixUnit" : "20", "montant" : "3960" }, "2.2" : { "texte" : "", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "montantTotal" : "8040"}
+)
+Array
+(
+    [_token] => cHxyM3PwoH6y3Uc2cgOJQGsgOTPjEdkmftaGfc6r
+    [devisNum] => 123
+    [devisObj] => dsa
+    [jsonObject] => {"1" : { "texte" : "Cuisine", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "1.1" : { "texte" : "Plafond", "quantite" : "198","unite" : "m2", "prixUnit" : "20", "montant" : "3960" }, "1.2" : { "texte" : "Mur", "quantite" : "2","unite" : "m2", "prixUnit" : "60", "montant" : "120" }, "2" : { "texte" : "Chambre", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "2.1" : { "texte" : "Plafond", "quantite" : "198","unite" : "m2", "prixUnit" : "20", "montant" : "3960" }, "2.2" : { "texte" : "", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "montantTotal" : "8040"}
+)
+Array
+(
+    [_token] => cHxyM3PwoH6y3Uc2cgOJQGsgOTPjEdkmftaGfc6r
+    [devisNum] => 123
+    [devisObj] => dsa
+    [chantier_id] => 1
+    [jsonObject] => {"1" : { "texte" : "sdagdf", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "1.1" : { "texte" : "fadgfsdg", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "montantTotal" : "0"}
+)
+Array
+(
+    [_token] => cHxyM3PwoH6y3Uc2cgOJQGsgOTPjEdkmftaGfc6r
+    [devisNum] => 123
+    [devisObj] => dsa
+    [chantier_id] => 1
+    [jsonObject] => {"1" : { "texte" : "sdagdf", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "1.1" : { "texte" : "fadgfsdg", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "montantTotal" : "0"}
+)
+Array
+(
+    [_token] => cHxyM3PwoH6y3Uc2cgOJQGsgOTPjEdkmftaGfc6r
+    [devisNum] => 123
+    [devisObj] => dsa
+    [chantier_id] => 1
+    [jsonObject] => {"1" : { "texte" : "sdagdf", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "1.1" : { "texte" : "fadgfsdg", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "montantTotal" : "0"}
+)
+Array
+(
+    [_token] => cHxyM3PwoH6y3Uc2cgOJQGsgOTPjEdkmftaGfc6r
+    [devisNum] => 123
+    [devisObj] => dsa
+    [chantier_id] => 1
+    [jsonObject] => {"1" : { "texte" : "sdagdf", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "1.1" : { "texte" : "fadgfsdg", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "montantTotal" : "0"}
+)
+Array
+(
+    [_token] => cHxyM3PwoH6y3Uc2cgOJQGsgOTPjEdkmftaGfc6r
+    [devisNum] => 123
+    [devisObj] => dsa
+    [chantier_id] => 1
+    [jsonObject] => {"1" : { "texte" : "sdagdf", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "1.1" : { "texte" : "fadgfsdg", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "montantTotal" : "0"}
+)
+Array
+(
+    [_token] => cHxyM3PwoH6y3Uc2cgOJQGsgOTPjEdkmftaGfc6r
+    [devisNum] => 123
+    [devisObj] => dsa
+    [chantier_id] => 1
+    [jsonObject] => {"1" : { "texte" : "sdagdf", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "1.1" : { "texte" : "fadgfsdg", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "montantTotal" : "0"}
+)
+Array
+(
+    [_token] => cHxyM3PwoH6y3Uc2cgOJQGsgOTPjEdkmftaGfc6r
+    [devisNum] => 123
+    [devisObj] => dsa
+    [chantier_id] => 1
+    [jsonObject] => {"1" : { "texte" : "sdagdf", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "1.1" : { "texte" : "fadgfsdg", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "montantTotal" : "0"}
+)
+Array
+(
+    [_token] => cHxyM3PwoH6y3Uc2cgOJQGsgOTPjEdkmftaGfc6r
+    [devisNum] => 123
+    [devisObj] => dsa
+    [chantier_id] => 1
+    [jsonObject] => {"1" : { "texte" : "sdagdf", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "1.1" : { "texte" : "fadgfsdg", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "montantTotal" : "0"}
+)
+Array
+(
+    [_token] => cHxyM3PwoH6y3Uc2cgOJQGsgOTPjEdkmftaGfc6r
+    [devisNum] => 123
+    [devisObj] => dsa
+    [chantier_id] => 1
+    [jsonObject] => {"1" : { "texte" : "sdagdf", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "1.1" : { "texte" : "fadgfsdg", "quantite" : "0","unite" : "", "prixUnit" : "0", "montant" : "0" }, "montantTotal" : "0"}
+)
