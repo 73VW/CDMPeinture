@@ -30,7 +30,7 @@ $( document ).ready(function() {
 		    	$("#code_input"+ligneCalcul).empty();
 		    	$("#texte"+ligneCalcul).empty();
 
-	    		if(isNaN(code)){
+	    		if(isNaN(code) || code == ""){
 	    			//TODO : interpréter le code entré
 		    		$("#code_input"+ligneCalcul).append('<input id='+ligneCalcul+' type=text value = '+code+'>');
 		    		$("#texte"+ligneCalcul).append('<input id='+ligneCalcul+' type=text value = '+texte+'>');
@@ -105,26 +105,37 @@ $( document ).ready(function() {
 		let prixUnit = 0;
 		let montant = 0;
 
-		let jsonString = "";
+		let jsonString = '{ "idDevis" : "'+idDevis+'", "objDevis" : "'+objDevis+'",';
+
+		let code = "";
 
 		for(let i = 0; i <= ligne; i++){
-			position = $("#code_input"+i+" input").val();
+			code = $("#code_input"+i+" input").val();
+
+			if (!isNaN(code) && code != ""){
+				position = code;
+			}
+			
 			texte = $("#texte"+i+" input").val();
 			quantite = $('#quantite'+i+" input").val();
 			unite = $('#unite'+i+' input').val();
 			prixUnit = $('#prix_unit'+i+' input').val();
 			montant = parseInt($("#montant"+i).text().slice(0,-4));
 
-			jsonString = "";
+			jsonString += '"'+position+'" : { "texte" : "'+texte+'", "quantite" : "'+quantite+'",'+
+						  '"unite" : "'+unite+'", "prixUnit" : "'+prixUnit+'", "montant" : "'+montant+'" }, ';
 		}
 
 		let montantTotal = parseInt($("#montantTot"+i).text().slice(0,-4));
 
-		let script = window.location.href;
+		jsonString += '"montantTotal" : "'+montantTotal+'"}';
+
+		let jsonObject = jQuery.parseJSON(jsonString);
+
+		let script = 'https://cdmpeinture.dev/administration/devis';
+		
 		$.post(script, {
-			id: dataMessage,
-			nomfrom: userName,
-			nomto: nomDestinataire
+			json : jsonObject
 		});
 	});
 	

@@ -10349,9 +10349,9 @@ module.exports = __webpack_require__(211);
 		var sousTot = 0;
 		var total = 0;
 
-		for (var i = 1; i <= ligne; i++) {
+		for (var _i = 1; _i <= ligne; _i++) {
 
-			sousTot = parseInt($("#montant" + i).text().slice(0, -4));
+			sousTot = parseInt($("#montant" + _i).text().slice(0, -4));
 
 			total += sousTot;
 		}
@@ -10369,7 +10369,7 @@ module.exports = __webpack_require__(211);
 				$("#code_input" + ligneCalcul).empty();
 				$("#texte" + ligneCalcul).empty();
 
-				if (isNaN(code)) {
+				if (isNaN(code) || code == "") {
 					//TODO : interpréter le code entré
 					$("#code_input" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text value = ' + code + '>');
 					$("#texte" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text value = ' + texte + '>');
@@ -10422,6 +10422,40 @@ module.exports = __webpack_require__(211);
 					totalDevis();
 				}
 			});
+		});
+	});
+
+	$('#sauvegarder').submit(function (e) {
+		var idDevis = $('#num_devis').val();
+		var objDevis = $('#obj_devis').val();
+
+		var position = 1;
+		var texte = "";
+		var quantite = 0;
+		var unite = "";
+		var prixUnit = 0;
+		var montant = 0;
+
+		var jsonString = '{ "idDevis" : "' + idDevis + '", "objDevis" : "' + objDevis + '"';
+
+		for (var _i2 = 0; _i2 <= ligne; _i2++) {
+			position = $("#code_input" + _i2 + " input").val();
+			texte = $("#texte" + _i2 + " input").val();
+			quantite = $('#quantite' + _i2 + " input").val();
+			unite = $('#unite' + _i2 + ' input').val();
+			prixUnit = $('#prix_unit' + _i2 + ' input').val();
+			montant = parseInt($("#montant" + _i2).text().slice(0, -4));
+
+			jsonString += '"position" : "' + position + '", "texte" : "' + texte + '", "quantite" : "' + quantite + '",' + '"unite" : "' + unite + '", "prixUnit" : "' + prixUnit + '", "montant" : "' + montant + '" ';
+		}
+
+		var montantTotal = parseInt($("#montantTot" + i).text().slice(0, -4));
+
+		var script = window.location.href;
+		$.post(script, {
+			id: dataMessage,
+			nomfrom: userName,
+			nomto: nomDestinataire
 		});
 	});
 });
