@@ -16,6 +16,9 @@
                     <p>Numéro de téléphone : {{ $contact->numeroTel }}</p>
                     <p>Adresse e-mail : {{ $contact->email }}</p>
                     <p>Statut : {{ $contact->client==1 ? 'Client' : 'Fournisseur' }}</p>
+                    <p>
+                        Modifier : {!! link_to_route_html('contact.edit', 'Modifier <i class="fa fa-arrow-right" aria-hidden="true"></i>', [$contact->id], ['class' => 'btn btn-warning btn-block']) !!}
+                    </p>
                     <h3 class="panel-title">Liste des chantiers</h3>
                     <table class="table">
                         <thead>

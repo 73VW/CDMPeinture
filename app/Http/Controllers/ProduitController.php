@@ -66,7 +66,7 @@ class ProduitController extends Controller
     */
     public function show(Produit $produit)
     {
-        return view($this->repository.'.show', compact('contact'));
+        return view($this->repository.'.show', compact('produit'));
     }
 
     /**
@@ -77,7 +77,7 @@ class ProduitController extends Controller
     */
     public function edit(Produit $produit)
     {
-        return view($this->repository.'.edit', compact('contact'));
+        return view($this->repository.'.edit', compact('produit'));
     }
 
     /**

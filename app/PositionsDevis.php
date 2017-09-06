@@ -16,4 +16,14 @@ class PositionsDevis extends Model
     ];
 
     protected $table = 'positionsdevis';
+
+    public function details()
+    {
+        return $this->hasMany("App\DetailsDevis", 'positionsDevis_id');
+    }
+
+    public function devis()
+    {
+        return $this->belongsTo("App\Devis");
+    }
 }

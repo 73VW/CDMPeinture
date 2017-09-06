@@ -13,7 +13,7 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js');
 mix.js('resources/assets/js/devis.js', 'public/js');
-mix.js('resources/assets/js/jquery-3.2.1.min.js', 'public/js');
+mix.js('resources/assets/js/jquery.js', 'public/js');
 mix.js([
     'resources/assets/agency/js/jqBootstrapValidation.js',
     'resources/assets/agency/js/contact_me.js',

@@ -6,16 +6,13 @@
  */
 
 
-
-window.$ = window.jQuery = require('jquery');
 window.Popper = require('popper.js').default;
-window.bootstrap = require('./bootstrap');
+window.Bootstrap = require('bootstrap/dist/js/bootstrap.js');
 
-window.jquery.easing = require('jquery.easing');
+window.jQuery.easing = require('jquery.easing');
 
 window.Util = require('bootstrap/js/dist/util');
 window.Dropdown = require('bootstrap/js/dist/dropdown');
-window.Scrollspy = require('bootstrap/js/dist/scrollspy');
 
 window.Chart = require('chart.js');
 window.DataTables = require('datatables.net-bs4');
