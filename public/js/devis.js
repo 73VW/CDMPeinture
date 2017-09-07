@@ -10395,7 +10395,7 @@ module.exports = __webpack_require__(9);
                 // TODO : interpréter le code entré
                 // let script = "{{ path('public/php/script.php') }}";
 
-                // 			$.post(script, {
+                // $.post(script, {
                 // 	code_input : code
                 // }).done(function(data) {
                 // 	code = "";
@@ -10409,7 +10409,7 @@ module.exports = __webpack_require__(9);
                 $("#montant" + ligneCalcul).append('0 frs');
             } else {
                 $("#code_input" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text style=font-weight:bold; value = ' + code + '>');
-                $("#texte" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text style=font-weight:bold; value = ' + texte + '>');
+                $("#texte" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text style=font-weight:bold; value = "' + texte + '"">');
             }
             totalDevis();
         }

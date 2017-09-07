@@ -173,8 +173,8 @@ body {
 header.masthead {
   text-align: center;
   color: white;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(/images/head.jpeg?89c2cb4c0c16b0fc8fec0638eb7919ef);
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/head.jpeg?89c2cb4c0c16b0fc8fec0638eb7919ef);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(/images/head.jpeg?4695b705ddc6569da7f84119d5893e4e);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/head.jpeg?4695b705ddc6569da7f84119d5893e4e);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
@@ -637,7 +637,7 @@ header.masthead .intro-text .intro-heading {
 
 section#contact {
   background-color: #222222;
-  background-image: url(/images/map-image.png?d59274b4474156836f7c7aa407f5ce32);
+  background-image: url(/images/map-image.png?d56cde1c8e82594e59bf54fe741d7299);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;

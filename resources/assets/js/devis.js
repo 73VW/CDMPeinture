@@ -81,7 +81,7 @@ $( document ).ready(function() {
                 $("#montant"+ligneCalcul).append('0 frs');
             }else{
                 $("#code_input"+ligneCalcul).append('<input id='+ligneCalcul+' type=text style=font-weight:bold; value = '+code+'>');
-                $("#texte"+ligneCalcul).append('<input id='+ligneCalcul+' type=text style=font-weight:bold; value = '+texte+'>');
+                $("#texte"+ligneCalcul).append('<input id='+ligneCalcul+' type=text style=font-weight:bold; value = "'+texte+'"">');
             }
             totalDevis();
         }
