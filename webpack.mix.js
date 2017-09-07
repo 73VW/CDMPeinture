@@ -11,14 +11,11 @@ let mix = require('laravel-mix');
 |
 */
 
-mix.js('resources/assets/js/app.js', 'public/js');
+mix.js('resources/assets/js/app.js', 'public/js/app.js');
 mix.js('resources/assets/js/devis.js', 'public/js');
-mix.js('resources/assets/js/jquery.js', 'public/js');
-mix.js([
-    'resources/assets/agency/js/jqBootstrapValidation.js',
-    'resources/assets/agency/js/contact_me.js',
-    'resources/assets/agency/js/agency.js'], 'public/js/agency.js');
-mix.js('resources/assets/startbootstrap-sb-admin-master/js/sb-admin.js', 'public/js/sbadmin.js');
+mix.js('resources/assets/js/sb-admin.js', 'public/js/sbadmin.js');
+mix.copy(['node_modules/jquery.easing/jquery.easing.min.js', 'node_modules/jquery/dist/jquery.js', 'node_modules/bootstrap/dist/js/bootstrap.min.js'], 'public/js');
+mix.copy(['node_modules/startbootstrap-agency/js/agency.min.js', 'node_modules/startbootstrap-agency/js/contact_me.js', 'node_modules/startbootstrap-agency/js/jqBootstrapValidation.js'], 'public/js/agency');
 
 mix.autoload({
   jquery: ['$', 'window.jQuery', 'jQuery'],
@@ -26,6 +23,6 @@ mix.autoload({
 });
 
 mix.sass('resources/assets/sass/app.scss',  'public/css');
-mix.sass('resources/assets/agency/scss/agency.scss',  'public/css');
-mix.sass('resources/assets/startbootstrap-sb-admin-master/scss/sb-admin.scss',  'public/css');
+mix.sass('resources/assets/sass/agency/agency.scss',  'public/css');
+mix.sass('resources/assets/sass/sb-admin/sb-admin.scss',  'public/css');
 mix.copy('node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css', 'public/css');

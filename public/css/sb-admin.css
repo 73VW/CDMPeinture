@@ -494,8 +494,8 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 }
 
 body {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(/images/head.jpeg?2bca69989584c150342a0114f058726c);
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/head.jpeg?2bca69989584c150342a0114f058726c);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(/images/head.jpeg?89c2cb4c0c16b0fc8fec0638eb7919ef);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/head.jpeg?89c2cb4c0c16b0fc8fec0638eb7919ef);
   background-size: cover;
 }
 

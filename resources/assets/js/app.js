@@ -4,18 +4,11 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
-
 window.Popper = require('popper.js').default;
-window.Bootstrap = require('bootstrap/dist/js/bootstrap.js');
+//Dropdown = require('bootstrap/js/dist/dropdown');
 
-window.jQuery.easing = require('jquery.easing');
-
-window.Util = require('bootstrap/js/dist/util');
-window.Dropdown = require('bootstrap/js/dist/dropdown');
-
-window.Chart = require('chart.js');
-window.DataTables = require('datatables.net-bs4');
+//window.Chart = require('chart.js');
+//window.DataTables = require('datatables.net-bs4');
 
 //window.Vue = require('vue');
 

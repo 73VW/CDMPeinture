@@ -597,7 +597,13 @@ $contact = "Contact";
                             <!-- Bootstrap core JavaScript -->
                             <script src="{{ asset('js/jquery.js') }}"></script>
                             <script src="{{ asset('js/app.js') }}"></script>
-                            <script src="{{ asset('js/agency.js') }}"></script>
+                            <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+                            <script src="{{ asset('js/jquery.easing.min.js') }}"></script>
+
+                            <!-- Plugin JavaScript -->
+                            <script src="{{ asset('js/agency/jqBootstrapValidation.js') }}"></script>
+                            <script src="{{ asset('js/agency/contact_me.js') }}"></script>
+                            <script src="{{ asset('js/agency/agency.min.js') }}"></script>
 
 
                         </body>
