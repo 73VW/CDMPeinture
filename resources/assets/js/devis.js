@@ -65,15 +65,15 @@ $( document ).ready(function() {
 			$("#montant"+ligneCalcul).empty();
 
 			if(isNaN(code) || code == ""){
-				    			// TODO : interpréter le code entré
-				    // let script = "{{ path('public/php/script.php') }}";
+				// TODO : interpréter le code entré
+				// let script = "{{ path('public/php/script.php') }}";
 
-				    // 			$.post(script, {
-								// 	code_input : code
-								// }).done(function(data) {
-								// 	code = "";
-								// 	texte = data;
-								// });
+				// $.post(script, {
+				// 	code_input : code
+				// }).done(function(data) {
+				// 	code = "";
+				// 	texte = data;
+				// });
 				$("#code_input"+ligneCalcul).append('<input id='+ligneCalcul+' type=text value = '+code+'>');
 				$("#texte"+ligneCalcul).append('<input id='+ligneCalcul+' type=text value = '+texte+'>');
 				$("#quantite"+ligneCalcul).append('<input id='+ligneCalcul+' type=number value = 0>');
