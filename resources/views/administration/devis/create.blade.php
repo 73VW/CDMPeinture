@@ -55,13 +55,15 @@
                                 </tr>
                             </thead>
                             <tbody id = "devis_table">
-                                <tr>
+
+                                <tr id = "ligne1">
                                     <td id = "code_input1" class = "petit"><input type="text" id="1"></td>
                                     <td id = "texte1"><input type="text" id="1"></td>
                                     <td id = "quantite1"><input type="number" value = "0" id="1"></td>
                                     <td id = "unite1" class="petit"><input type="text" id="1"></td>
                                     <td id = "prix_unit1"><input type="number" value = "0" id="1"></td>
                                     <td id = "montant1">0 frs</td>
+                                    <td><input class = "plus" id="1" type="image" src="{{ asset('images/plus.png') }}" width="24" height="24"/></td>
                                 </tr>
                             </tbody>
                             <tfoot>

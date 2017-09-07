@@ -46,6 +46,7 @@
                                 </tr>
                             </thead>
                             <tbody id = "devis_table">
+                                
                                 <tr>
                                     <td id = "code_input1" class = "petit"><input type="text" id="1"></td>
                                     <td id = "texte1"><input type="text" id="1"></td>
