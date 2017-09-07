@@ -11,5 +11,7 @@
     "/js/agency/agency.min.js": "/js/agency/agency.min.js",
     "/js/agency/contact_me.js": "/js/agency/contact_me.js",
     "/js/agency/jqBootstrapValidation.js": "/js/agency/jqBootstrapValidation.js",
-    "/css/dataTables.bootstrap4.css": "/css/dataTables.bootstrap4.css"
+    "/css/dataTables.bootstrap4.css": "/css/dataTables.bootstrap4.css",
+    "/images/minus.png": "/images/minus.png",
+    "/images/plus.png": "/images/plus.png"
 }

@@ -39,9 +39,9 @@ class DevisRepository
     {
         $devis->update($inputs);
     }
-    public function destroy(Devis $devis)
+    public function destroy(Devis $devi)
     {
-        $devis->delete();
+        $devi->delete();
     }
 }
  ?>

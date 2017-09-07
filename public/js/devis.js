@@ -10338,173 +10338,172 @@ module.exports = __webpack_require__(9);
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function($) {$(document).ready(function () {
-	var ligne = 1;
-	var ligneCalcul = 1;
+    var ligne = 1;
+    var ligneCalcul = 1;
 
-	function ligneEnCours(e) {
-		ligneCalcul = e.attr('id');
-	}
+    function ligneEnCours(e) {
+        ligneCalcul = e.attr('id');
+    }
 
-	function totalDevis() {
-		var sousTot = 0;
-		var total = 0;
+    function totalDevis() {
+        var sousTot = 0;
+        var total = 0;
 
-		for (var i = 1; i <= ligne; i++) {
+        for (var i = 1; i <= ligne; i++) {
 
-			sousTot = parseInt($("#montant" + i).text().slice(0, -4));
+            sousTot = parseInt($("#montant" + i).text().slice(0, -4));
 
-			if (!isNaN(sousTot)) {
-				total += sousTot;
-			}
-		}
+            if (!isNaN(sousTot)) {
+                total += sousTot;
+            }
+        }
 
-		$("#montantTot").html(total + " frs");
-	}
+        $("#montantTot").html(total + " frs");
+    }
 
-	$(document).on("click", "input[type='image']", function (e) {
+    $(document).on("click", "input[type='image']", function (e) {
+        e.preventDefault();
 
-		ligneEnCours($(this));
+        ligneEnCours($(this));
 
-		if ($(this).attr('class').indexOf("plus") >= 0) {
-			ligne++;
+        if ($(this).attr('class').indexOf("plus") >= 0) {
+            ligne++;
 
-			$('<tr id = ligne' + ligne + '>' + '<td id = code_input' + ligne + ' class = petit><input id=' + ligne + ' type=text></td>' + '<td id = texte' + ligne + '><input id=' + ligne + ' type=text></td>' + '<td id = quantite' + ligne + '><input id=' + ligne + ' type=number value=0></td>' + '<td id = unite' + ligne + ' class = petit><input id=' + ligne + ' type=text></td>' + '<td id = prix_unit' + ligne + '><input id=' + ligne + ' type=number value=0></td>' + '<td id = montant' + ligne + '>0 frs</td>' + '<td><input class = plus id=' + ligne + ' type=image src=http://cdmpeinture.dev/images/plus.png width=24 height=24>' + '<input class = minus id=' + ligne + ' type=image src=http://cdmpeinture.dev/images/minus.png width=24 height=24/></td>' + '</tr>').insertAfter('#ligne' + ligneCalcul);
-		} else {
-			$('#ligne' + ligneCalcul).remove();
-		}
+            $('<tr id = ligne' + ligne + '>' + '<td id = code_input' + ligne + ' class = petit><input id=' + ligne + ' type=text></td>' + '<td id = texte' + ligne + '><input id=' + ligne + ' type=text></td>' + '<td id = quantite' + ligne + '><input id=' + ligne + ' type=number value=0></td>' + '<td id = unite' + ligne + ' class = petit><input id=' + ligne + ' type=text></td>' + '<td id = prix_unit' + ligne + '><input id=' + ligne + ' type=number value=0></td>' + '<td id = montant' + ligne + '>0 frs</td>' + '<td><input class = plus id=' + ligne + ' onclick="return false;" type=image src=http://cdmpeinture.dev/images/plus.png width=24 height=24>' + '<input class = minus id=' + ligne + ' onclick="return false;" type=image src=http://cdmpeinture.dev/images/minus.png width=24 height=24/></td>' + '</tr>').insertAfter('#ligne' + ligneCalcul);
+        } else {
+            $('#ligne' + ligneCalcul).remove();
+        }
 
-		totalDevis();
+        totalDevis();
+        return false;
+    });
 
-		event.preventDefault();
-		return false;
-	});
+    $(document).keypress(function (e) {
+        if (e.which == 13) {
 
-	$(document).keypress(function (e) {
-		if (e.which == 13) {
+            var code = $("#code_input" + ligneCalcul + " input").val();
+            var texte = $("#texte" + ligneCalcul + " input").val();
 
-			var code = $("#code_input" + ligneCalcul + " input").val();
-			var texte = $("#texte" + ligneCalcul + " input").val();
+            $("#code_input" + ligneCalcul).empty();
+            $("#texte" + ligneCalcul).empty();
+            $("#quantite" + ligneCalcul).empty();
+            $("#unite" + ligneCalcul).empty();
+            $("#prix_unit" + ligneCalcul).empty();
+            $("#montant" + ligneCalcul).empty();
 
-			$("#code_input" + ligneCalcul).empty();
-			$("#texte" + ligneCalcul).empty();
-			$("#quantite" + ligneCalcul).empty();
-			$("#unite" + ligneCalcul).empty();
-			$("#prix_unit" + ligneCalcul).empty();
-			$("#montant" + ligneCalcul).empty();
+            if (isNaN(code) || code == "") {
+                // TODO : interpréter le code entré
+                // let script = "{{ path('public/php/script.php') }}";
 
-			if (isNaN(code) || code == "") {
-				// TODO : interpréter le code entré
-				// let script = "{{ path('public/php/script.php') }}";
+                // 			$.post(script, {
+                // 	code_input : code
+                // }).done(function(data) {
+                // 	code = "";
+                // 	texte = data;
+                // });
+                $("#code_input" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text value = ' + code + '>');
+                $("#texte" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text value = ' + texte + '>');
+                $("#quantite" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=number value = 0>');
+                $("#unite" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text>');
+                $("#prix_unit" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=number value = 0>');
+                $("#montant" + ligneCalcul).append('0 frs');
+            } else {
+                $("#code_input" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text style=font-weight:bold; value = ' + code + '>');
+                $("#texte" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text style=font-weight:bold; value = ' + texte + '>');
+            }
+            totalDevis();
+        }
+    });
 
-				// 			$.post(script, {
-				// 	code_input : code
-				// }).done(function(data) {
-				// 	code = "";
-				// 	texte = data;
-				// });
-				$("#code_input" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text value = ' + code + '>');
-				$("#texte" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text value = ' + texte + '>');
-				$("#quantite" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=number value = 0>');
-				$("#unite" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text>');
-				$("#prix_unit" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=number value = 0>');
-				$("#montant" + ligneCalcul).append('0 frs');
-			} else {
-				$("#code_input" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text style=font-weight:bold; value = ' + code + '>');
-				$("#texte" + ligneCalcul).append('<input id=' + ligneCalcul + ' type=text style=font-weight:bold; value = ' + texte + '>');
-			}
-			totalDevis();
-		}
-	});
+    $(document).on("click", "input", function () {
+        ligneEnCours($(this));
 
-	$(document).on("click", "input", function () {
-		ligneEnCours($(this));
+        $('#quantite' + ligneCalcul + ' input').each(function () {
+            var elem = $(this);
 
-		$('#quantite' + ligneCalcul + ' input').each(function () {
-			var elem = $(this);
+            elem.data('oldVal', elem.val());
 
-			elem.data('oldVal', elem.val());
+            elem.bind("propertychange change click keyup input paste", function (event) {
 
-			elem.bind("propertychange change click keyup input paste", function (event) {
+                if (elem.data('oldVal') != elem.val()) {
 
-				if (elem.data('oldVal') != elem.val()) {
+                    elem.data('oldVal', elem.val());
 
-					elem.data('oldVal', elem.val());
+                    $("#montant" + ligneCalcul).html($("#quantite" + ligneCalcul + " input").val() * $("#prix_unit" + ligneCalcul + " input").val() + " frs");
+                    totalDevis();
+                }
+            });
+        });
 
-					$("#montant" + ligneCalcul).html($("#quantite" + ligneCalcul + " input").val() * $("#prix_unit" + ligneCalcul + " input").val() + " frs");
-					totalDevis();
-				}
-			});
-		});
+        $('#prix_unit' + ligneCalcul + ' input').each(function () {
+            var elem = $(this);
 
-		$('#prix_unit' + ligneCalcul + ' input').each(function () {
-			var elem = $(this);
+            elem.data('oldVal', elem.val());
 
-			elem.data('oldVal', elem.val());
+            elem.bind("propertychange change click keyup input paste", function (event) {
 
-			elem.bind("propertychange change click keyup input paste", function (event) {
+                if (elem.data('oldVal') != elem.val()) {
 
-				if (elem.data('oldVal') != elem.val()) {
+                    elem.data('oldVal', elem.val());
 
-					elem.data('oldVal', elem.val());
+                    $("#montant" + ligneCalcul).html($("#quantite" + ligneCalcul + " input").val() * $("#prix_unit" + ligneCalcul + " input").val() + " frs");
+                    totalDevis();
+                }
+            });
+        });
+    });
 
-					$("#montant" + ligneCalcul).html($("#quantite" + ligneCalcul + " input").val() * $("#prix_unit" + ligneCalcul + " input").val() + " frs");
-					totalDevis();
-				}
-			});
-		});
-	});
+    $('#form').submit(function (e) {
 
-	$('#form').submit(function (e) {
+        var position = 1;
+        var texte = "";
+        var quantite = 0;
+        var unite = "";
+        var prixUnit = 0;
+        var montant = 0;
 
-		var position = 1;
-		var texte = "";
-		var quantite = 0;
-		var unite = "";
-		var prixUnit = 0;
-		var montant = 0;
+        var jsonString = '{';
 
-		var jsonString = '{';
+        var code = "";
 
-		var code = "";
+        var titre = 1;
+        var sous_titre = 1;
 
-		var titre = 1;
-		var sous_titre = 1;
+        for (var i = 1; i <= ligne; i++) {
 
-		for (var i = 1; i <= ligne; i++) {
+            code = $("#code_input" + i + " input").val();
+            texte = $("#texte" + i + " input").val();
+            quantite = $('#quantite' + i + " input").val();
+            unite = $('#unite' + i + ' input').val();
+            prixUnit = $('#prix_unit' + i + ' input').val();
+            montant = parseInt($("#montant" + i).text().slice(0, -4));
 
-			code = $("#code_input" + i + " input").val();
-			texte = $("#texte" + i + " input").val();
-			quantite = $('#quantite' + i + " input").val();
-			unite = $('#unite' + i + ' input').val();
-			prixUnit = $('#prix_unit' + i + ' input').val();
-			montant = parseInt($("#montant" + i).text().slice(0, -4));
+            console.log(texte);
 
-			console.log(texte);
+            if (typeof texte !== "undefined") {
+                if (!isNaN(code) && code != "") {
+                    position = code;
+                    titre = code;
+                    sous_titre = 1;
+                } else {
+                    position = titre + '.' + sous_titre;
+                    sous_titre++;
+                }
 
-			if (typeof texte !== "undefined") {
-				if (!isNaN(code) && code != "") {
-					position = code;
-					titre = code;
-					sous_titre = 1;
-				} else {
-					position = titre + '.' + sous_titre;
-					sous_titre++;
-				}
+                if (!isNaN(code) && code != "") {
+                    jsonString += '"' + position + '" : { "texte" : "' + texte + '"}, ';
+                } else if (texte != "") {
+                    jsonString += '"' + position + '" : { "texte" : "' + texte + '", "quantite" : "' + quantite + '",' + '"unite" : "' + unite + '", "prixUnit" : "' + prixUnit + '", "montant" : "' + montant + '" }, ';
+                }
+            }
+        }
 
-				if (!isNaN(code) && code != "") {
-					jsonString += '"' + position + '" : { "texte" : "' + texte + '"}, ';
-				} else if (texte != "") {
-					jsonString += '"' + position + '" : { "texte" : "' + texte + '", "quantite" : "' + quantite + '",' + '"unite" : "' + unite + '", "prixUnit" : "' + prixUnit + '", "montant" : "' + montant + '" }, ';
-				}
-			}
-		}
+        var montantTotal = parseInt($("#montantTot").text().slice(0, -4));
 
-		var montantTotal = parseInt($("#montantTot").text().slice(0, -4));
+        jsonString += '"montantTotal" : "' + montantTotal + '"}';
 
-		jsonString += '"montantTotal" : "' + montantTotal + '"}';
-
-		$('<input />').attr('type', 'hidden').attr('name', "jsonObject").attr('value', jsonString).appendTo('#form');
-	});
+        $('<input />').attr('type', 'hidden').attr('name', "jsonObject").attr('value', jsonString).appendTo('#form');
+    });
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 

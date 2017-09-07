@@ -29,13 +29,13 @@ class DetailsDevisRepository
         return true;
     }
 
-    public function update(DetailsDevis $detailsDevis, Array $inputs)
+    public function update(DetailsDevis $detailsDevi, Array $inputs)
     {
-        $detailsDevis->update($inputs);
+        $detailsDevi->update($inputs);
     }
-    public function destroy(DetailsDevis $detailsDevis)
+    public function destroy(DetailsDevis $detailsDevi)
     {
-        $detailsDevis->delete();
+        $detailsDevi->delete();
     }
 }
  ?>
