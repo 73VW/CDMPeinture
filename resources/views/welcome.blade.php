@@ -595,9 +595,9 @@ $contact = "Contact";
                             </div>
 
                             <!-- Bootstrap core JavaScript -->
-
+                            <script src="{{ asset('js/jquery.js') }}"></script>
                             <script src="{{ asset('js/app.js') }}"></script>
-                            <script src="{{ asset('js/agency.min.js') }}"></script>
+                            <script src="{{ asset('js/agency.js') }}"></script>
 
 
                         </body>

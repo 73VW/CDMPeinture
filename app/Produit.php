@@ -13,11 +13,16 @@ class Produit extends Model
      * @var array
      */
     protected $fillable = [
-        'nom', 'contact_id', 'prixUnitaire', 'stock', 'unite', 'produit'
+        'nom', 'code', 'contact_id', 'prixUnitaire', 'stock', 'unite', 'produit'
     ];
 
     public function contact()
     {
         return $this->belongsTo("App\Contact");
+    }
+
+    public function detailsDevis()
+    {
+        return $this->hasOne("App\DetailsDevis");
     }
 }

@@ -18,6 +18,11 @@
                         {{ Form::text('nom', null, array('class' => 'form-control col-sm-8', 'required' => 'required', 'autofocus' => 'autofocus')) }}
                         {{ $errors->first('nom', '<small class="help-block">:message</small>') }}
                     </div>
+                    <div class="form-group row{{ $errors->has('code') ? ' has-error' : '' }}">
+                        {{ Form::label('code', 'Code', array('class' => 'col-sm-2 text-muted')) }}
+                        {{ Form::text('code', null, array('class' => 'form-control col-sm-8', 'required' => 'required', 'autofocus' => 'autofocus')) }}
+                        {{ $errors->first('code', '<small class="help-block">:message</small>') }}
+                    </div>
                     <div class="form-group row{{ $errors->has('contact_id') ? ' has-error' : '' }}">
                         {{ Form::label('contact_id', 'Fournisseur', array('class' => 'col-sm-2 text-muted')) }}
                         {{ Form::text('contact_id', null, array('class' => 'form-control col-sm-8')) }}

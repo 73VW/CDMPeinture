@@ -70,6 +70,7 @@ class ChantierController extends Controller
     */
     public function show(Chantier $chantier)
     {
+
         $contact = $chantier->contact;
         return view($this->repository.'.show', compact('chantier', 'contact'));
     }

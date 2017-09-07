@@ -12,7 +12,6 @@ class DevisController extends Controller
     protected $devisRepository;
     protected $nbrPerPage = 10;
     protected $repository;
-    protected $nav;
 
     public function __construct(DevisRepository $devisRepository)
     {
@@ -39,8 +38,12 @@ class DevisController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-    public function create()
+    public function create(Request $request)
     {
+        if($request->has('chantier_id')){
+            $chantier = $request->chantier_id;
+            return view($this->repository.'.create', compact('chantier'));
+        }
         return view($this->repository.'.create');
     }
 
@@ -63,10 +66,10 @@ class DevisController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function show(Devis $devis)
+    public function show(Devis $devi)
     {
-        $chantiers = $devis->chantiers;
-        return view($this->repository.'.show', compact('devis', 'chantiers'));
+        $positions = $devi->positions;
+        return view($this->repository.'.show', compact('devi', 'positions'));
     }
 
     /**
@@ -75,9 +78,9 @@ class DevisController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function edit(Devis $devis)
+    public function edit(Devis $devi)
     {
-        return view($this->repository.'.edit', compact('devis'));
+        return view($this->repository.'.edit', compact('devi'));
     }
 
     /**
@@ -87,9 +90,9 @@ class DevisController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function update(Request $request, Devis $devis)
+    public function update(Request $request, Devis $devi)
     {
-        $this->devisRepository->update($devis, $request->all());
+        $this->devisRepository->update($devi, $request->all());
 
         return redirect()->route('devis.index')->withOk("L'utilisateur " . $request->name . " a été modifié.");
     }
@@ -100,9 +103,9 @@ class DevisController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function destroy(Devis $devis)
+    public function destroy(Devis $devi)
     {
-        $this->devisRepository->destroy($devis);
+        $this->devisRepository->destroy($devi);
 
         return back();
     }

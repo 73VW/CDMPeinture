@@ -34,7 +34,7 @@
                      </div>
                      <div class="form-group row{{ $errors->has('chantier_id') ? ' has-error' : '' }}">
                          {{ Form::label('chantier_id', 'Chantier', array('class' => 'col-sm-2 text-muted')) }}
-                         {{ Form::number('chantier_id', null, array('class' => 'form-control col-sm-8', 'required' => 'required', 'value' => (isset($chantier)? $chantier : 0), 'readonly ' => (isset($contact)? 'readonly ' : false))) }}
+                         {{ Form::number('chantier_id', null, array('class' => 'form-control col-sm-8', 'required' => 'required', 'value' => (isset($chantier)? $chantier : 0), 'readonly ' => (isset($chantier)? 'readonly ' : false))) }}
                          {{ $errors->first('chantier_id', '<small class="help-block">:message</small>') }}
                      </div>
                      <div class="form-group row{{ $errors->has('valeurTVA') ? ' has-error' : '' }}">

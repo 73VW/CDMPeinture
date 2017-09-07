@@ -19,4 +19,9 @@ class Chantier extends Model
     {
         return $this->belongsTo("App\Contact");
     }
+
+    public function devis()
+    {
+        return $this->hasMany("App\Devis");
+    }
 }
