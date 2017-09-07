@@ -26,3 +26,4 @@ mix.sass('resources/assets/sass/app.scss',  'public/css');
 mix.sass('resources/assets/sass/agency/agency.scss',  'public/css');
 mix.sass('resources/assets/sass/sb-admin/sb-admin.scss',  'public/css');
 mix.copy('node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css', 'public/css');
+mix.copy(['resources/assets/img/minus.png','resources/assets/img/plus.png'], 'public/images');

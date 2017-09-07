@@ -23,22 +23,20 @@ class CreateDetailsDevisTable extends Migration
             $table->foreign('positionsDevis_id')
             ->references('id')
             ->on('positionsDevis')
-            ->onDelete('restrict')
+            ->onDelete('cascade')
             ->onUpdate('cascade');
 
             $table->integer('enTeteDevis_id')->unsigned();
             $table->foreign('enTeteDevis_id')
             ->references('id')
             ->on('enTeteDevis')
-            ->onDelete('restrict')
+            ->onDelete('cascade')
             ->onUpdate('cascade');
 
             $table->integer('produits_id')->unsigned();
             $table->foreign('produits_id')
             ->references('id')
-            ->on('produits')
-            ->onDelete('restrict')
-            ->onUpdate('cascade');
+            ->on('produits');
             $table->timestamps();
         });
     }

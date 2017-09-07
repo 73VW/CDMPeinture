@@ -23,7 +23,7 @@ class CreateEnTeteDevisTable extends Migration
             $table->foreign('chantier_id')
             ->references('id')
             ->on('chantiers')
-            ->onDelete('restrict')
+            ->onDelete('cascade')
             ->onUpdate('cascade');
             $table->timestamps();
         });

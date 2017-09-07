@@ -22,7 +22,7 @@ class CreatePositionsDevisTable extends Migration
             $table->foreign('enTeteDevis_id')
             ->references('id')
             ->on('enTeteDevis')
-            ->onDelete('restrict')
+            ->onDelete('cascade')
             ->onUpdate('cascade');
             $table->timestamps();
         });

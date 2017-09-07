@@ -26,7 +26,7 @@ class CreateChantiersTable extends Migration
             $table->foreign('contact_id')
             ->references('id')
             ->on('contacts')
-            ->onDelete('restrict')
+            ->onDelete('cascade')
             ->onUpdate('cascade');
             $table->timestamps();
         });
