@@ -3,9 +3,13 @@
     "/css/app.css": "/css/app.css",
     "/css/agency.css": "/css/agency.css",
     "/css/sb-admin.css": "/css/sb-admin.css",
-    "/js/agency.js": "/js/agency.js",
     "/js/sbadmin.js": "/js/sbadmin.js",
-    "/js/jquery.js": "/js/jquery.js",
     "/js/devis.js": "/js/devis.js",
+    "/js/jquery.easing.min.js": "/js/jquery.easing.min.js",
+    "/js/jquery.js": "/js/jquery.js",
+    "/js/bootstrap.min.js": "/js/bootstrap.min.js",
+    "/js/agency/agency.min.js": "/js/agency/agency.min.js",
+    "/js/agency/contact_me.js": "/js/agency/contact_me.js",
+    "/js/agency/jqBootstrapValidation.js": "/js/agency/jqBootstrapValidation.js",
     "/css/dataTables.bootstrap4.css": "/css/dataTables.bootstrap4.css"
 }
