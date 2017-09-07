@@ -17,6 +17,7 @@ class CreateDetailsDevisTable extends Migration
             $table->float('prixUnitaire');
             $table->float('quantite');
             $table->string('unite');
+            $table->string('texte');
 
             $table->integer('positionsDevis_id')->unsigned();
             $table->foreign('positionsDevis_id')

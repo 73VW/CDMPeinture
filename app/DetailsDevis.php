@@ -12,7 +12,7 @@ class DetailsDevis extends Model
     * @var array
     */
     protected $fillable = [
-        'prixUnitaire','quantite','unite', 'positionsDevis_id', 'enTeteDevis_id', 'produits_id'
+        'prixUnitaire','quantite','unite','texte', 'positionsDevis_id', 'enTeteDevis_id', 'produits_id'
     ];
 
     protected $table = 'detailsdevis';

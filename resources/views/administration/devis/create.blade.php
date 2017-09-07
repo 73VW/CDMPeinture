@@ -6,6 +6,15 @@
     .petit input[type="text"] {
         width: 50px;
     }
+    
+    #left{
+        float:left;
+        width:80%;
+    }
+
+    #right{
+        margin-left: 20%;
+    }
 
 </style>
 
@@ -20,12 +29,15 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                    {{ Form::open(['id' => 'form', 'route' => 'devis.store', 'class' => 'form-horizontal']) }}
-                    {{ csrf_field() }}
-                    <div class="form-group row{{ $errors->has('devisNum') ? ' has-error' : '' }}">
+                        {{ Form::open(['id' => 'form', 'route' => 'devis.store', 'class' => 'form-horizontal']) }}
+                        {{ csrf_field() }}
+                    <div id="left" class="form-group row{{ $errors->has('devisNum') ? ' has-error' : '' }}">
                         {{ Form::label('devisNum', 'N° du devis', array('class' => 'col-sm-2 text-muted')) }}
                         {{ Form::text('devisNum', null, array('id' => 'num_devis' ,'class' => 'form-control col-sm-6', 'required' => 'required', 'autofocus' => 'autofocus')) }}
                         {{ $errors->first('devisNum', '<small class="help-block">:message</small>') }}
+                    </div>
+                    <div id="right">
+                        {{ Form::submit('Enregistrer !', ['id' => 'sauvegarder', 'class' => 'btn btn-primary btn-block col-sm-3']) }}
                     </div>
                     <div class="form-group row{{ $errors->has('devisObj') ? ' has-error' : '' }}">
                         {{ Form::label('devisObj', 'Objet du devis', array('class' => 'col-sm-2 text-muted')) }}
@@ -78,9 +90,6 @@
                             </tfoot>
                         </table>
                     </div>
-                </div>
-                <div>
-                {{ Form::submit('Enregistrer !', ['id' => 'sauvegarder', 'class' => 'btn btn-primary btn-block col-sm-3']) }}
                     {{ Form::close() }}
                 </div>
             </div>

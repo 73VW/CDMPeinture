@@ -94,7 +94,7 @@ class DevisController extends Controller
     {
         $this->devisRepository->update($devi, $request->all());
 
-        return redirect()->route('devis.index')->withOk("L'utilisateur " . $request->name . " a été modifié.");
+        return redirect()->route('devis.index')->withOk("Le devis " . $request->name . " a été modifié.");
     }
 
     /**

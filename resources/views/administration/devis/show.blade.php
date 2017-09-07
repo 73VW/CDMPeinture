@@ -42,7 +42,7 @@
                             @foreach ($position->details as $detail)
                             <tr>
                                 <td></td>
-                                <td>{!! $detail->produit->nom !!}</td>
+                                <td>{!!$detail->texte!!}</td>
                                 <td>{!!$detail->quantite!!}</td>
                                 <td>{!!$detail->unite!!}</td>
                                 <td>{!!$detail->prixUnitaire!!}</td>

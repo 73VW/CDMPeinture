@@ -23,7 +23,6 @@ class DetailsDevisRepository
         foreach ($inputs as $key => $value) {
             $inputs[$key]['produits_id'] = 1;
             $inputs[$key]['prixUnitaire'] = $inputs[$key]['prixUnit'];
-            unset($inputs[$key]['texte']);
             unset($inputs[$key]['prixUnit']);
             $this->detailsDevis->create($inputs[$key]);
         }
