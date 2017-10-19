@@ -6,14 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
 {
-
     /**
-    * The attributes that are mass assignable.
-    *
-    * @var array
-    */
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        'nom', 'prenom', 'rue', 'numero', 'codePostal', 'ville', 'numeroTel', 'email', 'client'
+        'nom', 'prenom', 'rue', 'numero', 'codePostal', 'ville', 'numeroTel', 'email', 'client',
     ];
 
     public function chantiers()

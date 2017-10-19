@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class HomeController extends Controller
 {
     /**
-    * Create a new controller instance.
-    *
-    * @return void
-    */
-
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     private $repository;
     private $nav;
-    
+
     public function __construct()
     {
         $this->repository = 'administration';
@@ -23,10 +20,10 @@ class HomeController extends Controller
     }
 
     /**
-    * Show the application dashboard.
-    *
-    * @return \Illuminate\Http\Response
-    */
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         return $this->nav.view($this->repository.'.home');

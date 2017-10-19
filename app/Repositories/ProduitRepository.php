@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Repositories;
+
 use App\Produit;
 
 class ProduitRepository
@@ -21,18 +23,18 @@ class ProduitRepository
         return $this->produit->where('produit', $bool)->paginate($n);
     }
 
-    public function store(Array $inputs)
+    public function store(array $inputs)
     {
         return $this->produit->create($inputs);
     }
 
-    public function update(Produit $produit, Array $inputs)
+    public function update(Produit $produit, array $inputs)
     {
         $produit->update($inputs);
     }
+
     public function destroy(Produit $produit)
     {
         $produit->delete();
     }
 }
- ?>

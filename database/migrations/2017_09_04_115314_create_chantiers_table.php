@@ -1,19 +1,19 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateChantiersTable extends Migration
 {
     /**
-    * Run the migrations.
-    *
-    * @return void
-    */
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
-        Schema::create('chantiers', function(Blueprint $table) {
+        Schema::create('chantiers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('rue');
             $table->integer('numero');
@@ -33,10 +33,10 @@ class CreateChantiersTable extends Migration
     }
 
     /**
-    * Reverse the migrations.
-    *
-    * @return void
-    */
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::drop('chantiers');

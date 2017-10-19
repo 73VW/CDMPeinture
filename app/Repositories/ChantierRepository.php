@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Repositories;
+
 use App\Chantier;
 
 class ChantierRepository
@@ -16,18 +18,18 @@ class ChantierRepository
         return $this->chantier->paginate($n);
     }
 
-    public function store(Array $inputs)
+    public function store(array $inputs)
     {
         return $this->chantier->create($inputs);
     }
 
-    public function update(Chantier $chantier, Array $inputs)
+    public function update(Chantier $chantier, array $inputs)
     {
         $chantier->update($inputs);
     }
+
     public function destroy(Chantier $chantier)
     {
         $chantier->delete();
     }
 }
- ?>

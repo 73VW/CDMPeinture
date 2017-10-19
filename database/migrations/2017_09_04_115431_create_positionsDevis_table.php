@@ -1,19 +1,19 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreatePositionsDevisTable extends Migration
 {
     /**
-    * Run the migrations.
-    *
-    * @return void
-    */
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
-        Schema::create('positionsDevis', function(Blueprint $table) {
+        Schema::create('positionsDevis', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('position');
             $table->string('texte');
@@ -29,10 +29,10 @@ class CreatePositionsDevisTable extends Migration
     }
 
     /**
-    * Reverse the migrations.
-    *
-    * @return void
-    */
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::drop('positionsDevis');

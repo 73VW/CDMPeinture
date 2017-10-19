@@ -17,8 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::group(['prefix' => '/administration'], function() {
-
+Route::group(['prefix' => '/administration'], function () {
     Route::get('/', 'HomeController@index')->name('administration');
     Route::get('/charts', 'HomeController@charts');
     Route::resource('/chantier', 'ChantierController');
@@ -26,5 +25,4 @@ Route::group(['prefix' => '/administration'], function() {
     Route::resource('/produit', 'ProduitController');
     Route::resource('/devis', 'DevisController');
     Route::get('/links', 'HomeController@links')->name('links');
-
 });
