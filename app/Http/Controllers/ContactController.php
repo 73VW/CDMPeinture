@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Contact;
+use Illuminate\Http\Request;
+use App\Repositories\ContactRepository;
 use App\Http\Requests\ContactCreateRequest;
 use App\Http\Requests\ContactUpdateRequest;
-use App\Repositories\ContactRepository;
-use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {

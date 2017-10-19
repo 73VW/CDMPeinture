@@ -69,7 +69,7 @@ function GetInfoFromTrueType($file, $embed, $subset, $map)
         Error($e->getMessage());
     }
     if ($embed) {
-        if (!$ttf->embeddable) {
+        if (! $ttf->embeddable) {
             Error('Font license does not allow embedding');
         }
         if ($subset) {
@@ -120,7 +120,7 @@ function GetInfoFromType1($file, $embed, $map)
     // Return information from a Type1 font
     if ($embed) {
         $f = fopen($file, 'rb');
-        if (!$f) {
+        if (! $f) {
             Error('Can\'t open font file');
         }
         // Read first segment
@@ -144,7 +144,7 @@ function GetInfoFromType1($file, $embed, $map)
     }
 
     $afm = substr($file, 0, -3).'afm';
-    if (!file_exists($afm)) {
+    if (! file_exists($afm)) {
         Error('AFM font file not found: '.$afm);
     }
     $a = file($afm);
@@ -186,13 +186,13 @@ function GetInfoFromType1($file, $embed, $map)
         }
     }
 
-    if (!isset($info['FontName'])) {
+    if (! isset($info['FontName'])) {
         Error('FontName missing in AFM file');
     }
-    if (!isset($info['Ascender'])) {
+    if (! isset($info['Ascender'])) {
         $info['Ascender'] = $info['FontBBox'][3];
     }
-    if (!isset($info['Descender'])) {
+    if (! isset($info['Descender'])) {
         $info['Descender'] = $info['FontBBox'][1];
     }
     $info['Bold'] = isset($info['Weight']) && preg_match('/bold|black/i', $info['Weight']);
@@ -223,7 +223,7 @@ function MakeFontDescriptor($info)
     // Descent
     $fd .= ",'Descent'=>".$info['Descender'];
     // CapHeight
-    if (!empty($info['CapHeight'])) {
+    if (! empty($info['CapHeight'])) {
         $fd .= ",'CapHeight'=>".$info['CapHeight'];
     } else {
         $fd .= ",'CapHeight'=>".$info['Ascender'];
@@ -347,7 +347,7 @@ function MakeUnicodeArray($map)
 function SaveToFile($file, $s, $mode)
 {
     $f = fopen($file, 'w'.$mode);
-    if (!$f) {
+    if (! $f) {
         Error('Can\'t write to file '.$file);
     }
     fwrite($f, $s);
@@ -393,7 +393,7 @@ function MakeFont($fontfile, $enc = 'cp1252', $embed = true, $subset = true)
     }
     ini_set('auto_detect_line_endings', '1');
 
-    if (!file_exists($fontfile)) {
+    if (! file_exists($fontfile)) {
         Error('Font file not found: '.$fontfile);
     }
     $ext = strtolower(substr($fontfile, -3));

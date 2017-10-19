@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Chantier;
+use Illuminate\Http\Request;
 use App\Http\Requests\ChantierRequest;
 use App\Repositories\ChantierRepository;
-use Illuminate\Http\Request;
 
 class ChantierController extends Controller
 {

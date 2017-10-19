@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProduitRequest;
 use App\Produit;
-use App\Repositories\ProduitRepository;
 use Illuminate\Http\Request;
+use App\Http\Requests\ProduitRequest;
+use App\Repositories\ProduitRepository;
 
 class ProduitController extends Controller
 {
@@ -34,16 +34,18 @@ class ProduitController extends Controller
     }
 
     /**
-    * Show the form for creating a new resource.
-    *
-    * @return \Illuminate\Http\Response
-    */
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create(Request $request)
     {
         if ($request->has('contact_id')) {
             $contact = $request->contact_id;
+
             return view($this->repository.'.create', compact('contact'));
         }
+
         return view($this->repository.'.create');
     }
 

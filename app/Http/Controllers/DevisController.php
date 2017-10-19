@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Devis;
 //use App\Http\Requests\DevisRequest;
-use App\Repositories\DevisRepository;
 use Illuminate\Http\Request;
+use App\Repositories\DevisRepository;
 
 class DevisController extends Controller
 {

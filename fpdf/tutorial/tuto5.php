@@ -83,7 +83,7 @@ class PDF extends FPDF
             $this->Cell($w[2], 6, number_format($row[2], 0, ',', ' '), 'LR', 0, 'R', $fill);
             $this->Cell($w[3], 6, number_format($row[3], 0, ',', ' '), 'LR', 0, 'R', $fill);
             $this->Ln();
-            $fill = !$fill;
+            $fill = ! $fill;
         }
         // Trait de terminaison
         $this->Cell(array_sum($w), 0, '', 'T');

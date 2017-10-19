@@ -38,7 +38,7 @@ class ttfparser
     public function __construct($file)
     {
         $this->f = fopen($file, 'rb');
-        if (!$this->f) {
+        if (! $this->f) {
             $this->Error('Can\'t open file: '.$file);
         }
     }
@@ -379,7 +379,7 @@ class ttfparser
 
     public function AddGlyph($id)
     {
-        if (!isset($this->glyphs[$id]['ssid'])) {
+        if (! isset($this->glyphs[$id]['ssid'])) {
             $this->glyphs[$id]['ssid'] = count($this->subsettedGlyphs);
             $this->subsettedGlyphs[] = $id;
             if (isset($this->glyphs[$id]['components'])) {
@@ -405,7 +405,7 @@ class ttfparser
 
     public function BuildCmap()
     {
-        if (!isset($this->subsettedChars)) {
+        if (! isset($this->subsettedChars)) {
             return;
         }
 
@@ -593,7 +593,7 @@ class ttfparser
         $numTables = count($tags);
         $offset = 12 + 16 * $numTables;
         foreach ($tags as $tag) {
-            if (!isset($this->tables[$tag]['data'])) {
+            if (! isset($this->tables[$tag]['data'])) {
                 $this->LoadTable($tag);
             }
             $this->tables[$tag]['offset'] = $offset;
@@ -660,7 +660,7 @@ class ttfparser
 
     public function Seek($tag)
     {
-        if (!isset($this->tables[$tag])) {
+        if (! isset($this->tables[$tag])) {
             $this->Error('Table not found: '.$tag);
         }
         fseek($this->f, $this->tables[$tag]['offset'], SEEK_SET);

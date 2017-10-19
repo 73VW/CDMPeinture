@@ -213,7 +213,7 @@ protected $PDFVersion;         // PDF version number
     public function SetDisplayMode($zoom, $layout = 'default')
     {
         // Set display mode in viewer
-        if ($zoom == 'fullpage' || $zoom == 'fullwidth' || $zoom == 'real' || $zoom == 'default' || !is_string($zoom)) {
+        if ($zoom == 'fullpage' || $zoom == 'fullwidth' || $zoom == 'real' || $zoom == 'default' || ! is_string($zoom)) {
             $this->ZoomMode = $zoom;
         } else {
             $this->Error('Incorrect zoom display mode: '.$zoom);
@@ -479,7 +479,7 @@ protected $PDFVersion;         // PDF version number
         }
         $info = $this->_loadfont($file);
         $info['i'] = count($this->fonts) + 1;
-        if (!empty($info['file'])) {
+        if (! empty($info['file'])) {
             // Embedded font
             if ($info['type'] == 'TrueType') {
                 $this->FontFiles[$info['file']] = ['length1'=>$info['originalsize']];
@@ -517,7 +517,7 @@ protected $PDFVersion;         // PDF version number
         }
         // Test if font is already loaded
         $fontkey = $family.$style;
-        if (!isset($this->fonts[$fontkey])) {
+        if (! isset($this->fonts[$fontkey])) {
             // Test if one of the core fonts
             if ($family == 'arial') {
                 $family = 'helvetica';
@@ -527,7 +527,7 @@ protected $PDFVersion;         // PDF version number
                     $style = '';
                 }
                 $fontkey = $family.$style;
-                if (!isset($this->fonts[$fontkey])) {
+                if (! isset($this->fonts[$fontkey])) {
                     $this->AddFont($family, $style);
                 }
             } else {
@@ -588,7 +588,7 @@ protected $PDFVersion;         // PDF version number
     public function Text($x, $y, $txt)
     {
         // Output a string
-        if (!isset($this->CurrentFont)) {
+        if (! isset($this->CurrentFont)) {
             $this->Error('No font has been set');
         }
         $s = sprintf('BT %.2F %.2F Td (%s) Tj ET', $x * $this->k, ($this->h - $y) * $this->k, $this->_escape($txt));
@@ -611,7 +611,7 @@ protected $PDFVersion;         // PDF version number
     {
         // Output a cell
         $k = $this->k;
-        if ($this->y + $h > $this->PageBreakTrigger && !$this->InHeader && !$this->InFooter && $this->AcceptPageBreak()) {
+        if ($this->y + $h > $this->PageBreakTrigger && ! $this->InHeader && ! $this->InFooter && $this->AcceptPageBreak()) {
             // Automatic page break
             $x = $this->x;
             $ws = $this->ws;
@@ -655,7 +655,7 @@ protected $PDFVersion;         // PDF version number
             }
         }
         if ($txt !== '') {
-            if (!isset($this->CurrentFont)) {
+            if (! isset($this->CurrentFont)) {
                 $this->Error('No font has been set');
             }
             if ($align == 'R') {
@@ -697,7 +697,7 @@ protected $PDFVersion;         // PDF version number
     public function MultiCell($w, $h, $txt, $border = 0, $align = 'J', $fill = false)
     {
         // Output text with automatic or explicit line breaks
-        if (!isset($this->CurrentFont)) {
+        if (! isset($this->CurrentFont)) {
             $this->Error('No font has been set');
         }
         $cw = &$this->CurrentFont['cw'];
@@ -806,7 +806,7 @@ protected $PDFVersion;         // PDF version number
     public function Write($h, $txt, $link = '')
     {
         // Output text in flowing mode
-        if (!isset($this->CurrentFont)) {
+        if (! isset($this->CurrentFont)) {
             $this->Error('No font has been set');
         }
         $cw = &$this->CurrentFont['cw'];
@@ -898,11 +898,11 @@ protected $PDFVersion;         // PDF version number
         if ($file == '') {
             $this->Error('Image file name is empty');
         }
-        if (!isset($this->images[$file])) {
+        if (! isset($this->images[$file])) {
             // First use of this image, get info
             if ($type == '') {
                 $pos = strrpos($file, '.');
-                if (!$pos) {
+                if (! $pos) {
                     $this->Error('Image file has no extension and no type was specified: '.$file);
                 }
                 $type = substr($file, $pos + 1);
@@ -912,7 +912,7 @@ protected $PDFVersion;         // PDF version number
                 $type = 'jpg';
             }
             $mtd = '_parse'.$type;
-            if (!method_exists($this, $mtd)) {
+            if (! method_exists($this, $mtd)) {
                 $this->Error('Unsupported image type: '.$type);
             }
             $info = $this->$mtd($file);
@@ -943,7 +943,7 @@ protected $PDFVersion;         // PDF version number
 
         // Flowing mode
         if ($y === null) {
-            if ($this->y + $h > $this->PageBreakTrigger && !$this->InHeader && !$this->InFooter && $this->AcceptPageBreak()) {
+            if ($this->y + $h > $this->PageBreakTrigger && ! $this->InHeader && ! $this->InFooter && $this->AcceptPageBreak()) {
                 // Automatic page break
                 $x2 = $this->x;
                 $this->AddPage($this->CurOrientation, $this->CurPageSize, $this->CurRotation);
@@ -1056,7 +1056,7 @@ protected $PDFVersion;         // PDF version number
             break;
         case 'F':
             // Save to local file
-            if (!file_put_contents($name, $this->buffer)) {
+            if (! file_put_contents($name, $this->buffer)) {
                 $this->Error('Unable to create output file: '.$name);
             }
             break;
@@ -1108,7 +1108,7 @@ protected $PDFVersion;         // PDF version number
     {
         if (is_string($size)) {
             $size = strtolower($size);
-            if (!isset($this->StdPageSizes[$size])) {
+            if (! isset($this->StdPageSizes[$size])) {
                 $this->Error('Unknown page size: '.$size);
             }
             $a = $this->StdPageSizes[$size];
@@ -1181,13 +1181,13 @@ protected $PDFVersion;         // PDF version number
             $this->Error('Incorrect font definition file name: '.$font);
         }
         include $this->fontpath.$font;
-        if (!isset($name)) {
+        if (! isset($name)) {
             $this->Error('Could not include font definition file');
         }
         if (isset($enc)) {
             $enc = strtolower($enc);
         }
-        if (!isset($subsetted)) {
+        if (! isset($subsetted)) {
             $subsetted = false;
         }
 
@@ -1213,7 +1213,7 @@ protected $PDFVersion;         // PDF version number
         if ($this->_isascii($value)) {
             return $param.'="'.$value.'"';
         }
-        if (!$isUTF8) {
+        if (! $isUTF8) {
             $value = utf8_encode($value);
         }
         if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false) {
@@ -1264,7 +1264,7 @@ protected $PDFVersion;         // PDF version number
     protected function _textstring($s)
     {
         // Format a text string
-        if (!$this->_isascii($s)) {
+        if (! $this->_isascii($s)) {
             $s = $this->_UTF8toUTF16($s);
         }
 
@@ -1285,13 +1285,13 @@ protected $PDFVersion;         // PDF version number
     {
         // Extract info from a JPEG file
         $a = getimagesize($file);
-        if (!$a) {
+        if (! $a) {
             $this->Error('Missing or incorrect image file: '.$file);
         }
         if ($a[2] != 2) {
             $this->Error('Not a JPEG file: '.$file);
         }
-        if (!isset($a['channels']) || $a['channels'] == 3) {
+        if (! isset($a['channels']) || $a['channels'] == 3) {
             $colspace = 'DeviceRGB';
         } elseif ($a['channels'] == 4) {
             $colspace = 'DeviceCMYK';
@@ -1308,7 +1308,7 @@ protected $PDFVersion;         // PDF version number
     {
         // Extract info from a PNG file
         $f = fopen($file, 'rb');
-        if (!$f) {
+        if (! $f) {
             $this->Error('Can\'t open image file: '.$file);
         }
         $info = $this->_parsepngstream($f, $file);
@@ -1399,7 +1399,7 @@ protected $PDFVersion;         // PDF version number
         $info = ['w'=>$w, 'h'=>$h, 'cs'=>$colspace, 'bpc'=>$bpc, 'f'=>'FlateDecode', 'dp'=>$dp, 'pal'=>$pal, 'trns'=>$trns];
         if ($ct >= 4) {
             // Extract alpha channel
-            if (!function_exists('gzuncompress')) {
+            if (! function_exists('gzuncompress')) {
                 $this->Error('Zlib not available, can\'t handle alpha channel: '.$file);
             }
             $data = gzuncompress($data);
@@ -1445,7 +1445,7 @@ protected $PDFVersion;         // PDF version number
     {
         // Read n bytes from stream
         $res = '';
-        while ($n > 0 && !feof($f)) {
+        while ($n > 0 && ! feof($f)) {
             $s = fread($f, $n);
             if ($s === false) {
                 $this->Error('Error while reading stream');
@@ -1471,14 +1471,14 @@ protected $PDFVersion;         // PDF version number
     protected function _parsegif($file)
     {
         // Extract info from a GIF file (via PNG conversion)
-        if (!function_exists('imagepng')) {
+        if (! function_exists('imagepng')) {
             $this->Error('GD extension is required for GIF support');
         }
-        if (!function_exists('imagecreatefromgif')) {
+        if (! function_exists('imagecreatefromgif')) {
             $this->Error('GD has no GIF read support');
         }
         $im = imagecreatefromgif($file);
-        if (!$im) {
+        if (! $im) {
             $this->Error('Missing or incorrect image file: '.$file);
         }
         imageinterlace($im, 0);
@@ -1487,7 +1487,7 @@ protected $PDFVersion;         // PDF version number
         $data = ob_get_clean();
         imagedestroy($im);
         $f = fopen('php://temp', 'rb+');
-        if (!$f) {
+        if (! $f) {
             $this->Error('Unable to create memory stream');
         }
         fwrite($f, $data);
@@ -1592,7 +1592,7 @@ protected $PDFVersion;         // PDF version number
         $this->_put('/Contents '.($this->n + 1).' 0 R>>');
         $this->_put('endobj');
         // Page content
-        if (!empty($this->AliasNbPages)) {
+        if (! empty($this->AliasNbPages)) {
             $this->pages[$n] = str_replace($this->AliasNbPages, $this->page, $this->pages[$n]);
         }
         $this->_putstreamobject($this->pages[$n]);
@@ -1635,11 +1635,11 @@ protected $PDFVersion;         // PDF version number
             $this->_newobj();
             $this->FontFiles[$file]['n'] = $this->n;
             $font = file_get_contents($this->fontpath.$file, true);
-            if (!$font) {
+            if (! $font) {
                 $this->Error('Font file not found: '.$file);
             }
             $compressed = (substr($file, -2) == '.z');
-            if (!$compressed && isset($info['length2'])) {
+            if (! $compressed && isset($info['length2'])) {
                 $font = substr($font, 6, $info['length1']).substr($font, 6 + $info['length1'] + 6, $info['length2']);
             }
             $this->_put('<</Length '.strlen($font));
@@ -1657,7 +1657,7 @@ protected $PDFVersion;         // PDF version number
         foreach ($this->fonts as $k=>$font) {
             // Encoding
             if (isset($font['diff'])) {
-                if (!isset($this->encodings[$font['enc']])) {
+                if (! isset($this->encodings[$font['enc']])) {
                     $this->_newobj();
                     $this->_put('<</Type /Encoding /BaseEncoding /WinAnsiEncoding /Differences ['.$font['diff'].']>>');
                     $this->_put('endobj');
@@ -1671,7 +1671,7 @@ protected $PDFVersion;         // PDF version number
                 } else {
                     $cmapkey = $font['name'];
                 }
-                if (!isset($this->cmaps[$cmapkey])) {
+                if (! isset($this->cmaps[$cmapkey])) {
                     $cmap = $this->_tounicodecmap($font['uv']);
                     $this->_putstreamobject($cmap);
                     $this->cmaps[$cmapkey] = $this->n;
@@ -1732,7 +1732,7 @@ protected $PDFVersion;         // PDF version number
                 foreach ($font['desc'] as $k=>$v) {
                     $s .= ' /'.$k.' '.$v;
                 }
-                if (!empty($font['file'])) {
+                if (! empty($font['file'])) {
                     $s .= ' /FontFile'.($type == 'Type1' ? '' : '2').' '.$this->FontFiles[$font['file']]['n'].' 0 R';
                 }
                 $this->_put($s.'>>');
@@ -1740,7 +1740,7 @@ protected $PDFVersion;         // PDF version number
             } else {
                 // Allow for additional types
                 $mtd = '_put'.strtolower($type);
-                if (!method_exists($this, $mtd)) {
+                if (! method_exists($this, $mtd)) {
                     $this->Error('Unsupported font type: '.$type);
                 }
                 $this->$mtd($font);
@@ -1903,7 +1903,7 @@ protected $PDFVersion;         // PDF version number
             $this->_put('/OpenAction ['.$n.' 0 R /FitH null]');
         } elseif ($this->ZoomMode == 'real') {
             $this->_put('/OpenAction ['.$n.' 0 R /XYZ null null 1]');
-        } elseif (!is_string($this->ZoomMode)) {
+        } elseif (! is_string($this->ZoomMode)) {
             $this->_put('/OpenAction ['.$n.' 0 R /XYZ null null '.sprintf('%.2F', $this->ZoomMode / 100).']');
         }
         if ($this->LayoutMode == 'single') {
