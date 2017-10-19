@@ -12,7 +12,6 @@ class ProduitController extends Controller
     protected $produitRepository;
     protected $nbrPerPage = 10;
     protected $repository;
-    protected $nav;
 
     public function __construct(ProduitRepository $produitRepository)
     {
@@ -35,12 +34,16 @@ class ProduitController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    * Show the form for creating a new resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function create(Request $request)
     {
+        if ($request->has('contact_id')) {
+            $contact = $request->contact_id;
+            return view($this->repository.'.create', compact('contact'));
+        }
         return view($this->repository.'.create');
     }
 

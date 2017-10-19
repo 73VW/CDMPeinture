@@ -13,7 +13,6 @@ class ContactController extends Controller
     protected $contactRepository;
     protected $nbrPerPage = 10;
     protected $repository;
-    protected $nav;
 
     public function __construct(ContactRepository $contactRepository)
     {

@@ -10,7 +10,6 @@ class HomeController extends Controller
      * @return void
      */
     private $repository;
-    private $nav;
 
     public function __construct()
     {

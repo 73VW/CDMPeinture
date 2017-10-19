@@ -25,7 +25,7 @@
                     </div>
                     <div class="form-group row{{ $errors->has('contact_id') ? ' has-error' : '' }}">
                         {{ Form::label('contact_id', 'Fournisseur', array('class' => 'col-sm-2 text-muted')) }}
-                        {{ Form::text('contact_id', null, array('class' => 'form-control col-sm-8')) }}
+                        {{ Form::number('contact_id', null, array('class' => 'form-control col-sm-8', 'required' => 'required', 'value' => (isset($contact)? $contact : 0), 'readonly ' => (isset($contact)? 'readonly ' : false))) }}
                         {{ $errors->first('contact_id', '<small class="help-block">:message</small>') }}
                     </div>
                     <div class="form-group row{{ $errors->has('prixUnitaire') ? ' has-error' : '' }}">

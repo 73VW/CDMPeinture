@@ -12,7 +12,6 @@ class ChantierController extends Controller
     protected $chantierRepository;
     protected $nbrPerPage = 10;
     protected $repository;
-    protected $nav;
 
     public function __construct(ChantierRepository $chantierRepository)
     {

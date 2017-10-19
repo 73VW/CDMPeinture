@@ -19,6 +19,7 @@
                     <p>
                         Modifier : {!! link_to_route_html('contact.edit', 'Modifier <i class="fa fa-arrow-right" aria-hidden="true"></i>', [$contact->id], ['class' => 'btn btn-warning btn-block']) !!}
                     </p>
+                    @if($contact->client == true)
                     <h3 class="panel-title">Liste des chantiers</h3>
                     <table class="table">
                         <thead>
@@ -39,7 +40,7 @@
                                 <td>{!! link_to_route('chantier.edit', 'Modifier', [$chantier->id], ['class' => 'btn btn-warning btn-block']) !!}</td>
                                 <td>
                                     {!! Form::open(['method' => 'DELETE', 'route' => ['chantier.destroy', $chantier->id]]) !!}
-                                    {!! Form::submit('Supprimer', ['class' => 'btn btn-danger btn-block', 'onclick' => 'return confirm(\'Vraiment supprimer cet utilisateur ?\')']) !!}
+                                    {!! Form::submit('Supprimer', ['class' => 'btn btn-danger btn-block', 'onclick' => 'return confirm(\'Vraiment supprimer ce chantier ?\')']) !!}
                                     {!! Form::close() !!}
                                 </td>
                             </tr>
@@ -48,6 +49,37 @@
                         </tbody>
                     </table>
                     {!! link_to_route('chantier.create', 'Ajouter un chantier', ['contact_id' => $contact->id], ['class' => 'btn btn-info pull-right']) !!}
+                    @else
+                    <h3 class="panel-title">Liste des produits</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nom</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($contact->produits as $produit)
+                            <tr>
+                                <td>{!! $produit->id !!}</td>
+                                <td class="text-primary"><strong>{!! $produit->nom !!}</strong></td>
+                                <td>{!! link_to_route('produit.show', 'Voir', [$produit->id], ['class' => 'btn btn-success btn-block']) !!}</td>
+                                <td>{!! link_to_route('produit.edit', 'Modifier', [$produit->id], ['class' => 'btn btn-warning btn-block']) !!}</td>
+                                <td>
+                                    {!! Form::open(['method' => 'DELETE', 'route' => ['produit.destroy', $produit->id]]) !!}
+                                    {!! Form::submit('Supprimer', ['class' => 'btn btn-danger btn-block', 'onclick' => 'return confirm(\'Vraiment supprimer ce produit ?\')']) !!}
+                                    {!! Form::close() !!}
+                                </td>
+                            </tr>
+
+                            @endforeach
+                        </tbody>
+                    </table>
+                    {!! link_to_route('produit.create', 'Ajouter un produit', ['contact_id' => $contact->id], ['class' => 'btn btn-info pull-right']) !!}
+                    @endif
                     <a href="javascript:history.back()" class="btn btn-primary btn-retour">
                         Retour
                     </a>
